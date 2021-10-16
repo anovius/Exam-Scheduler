@@ -6,12 +6,14 @@ import './auth.css'
 function Auth() {
     return(
         <Router>
-            <Switch>
-                <Route exact path="/auth" component={Login} />
-                <Route exact path="/auth/forgot" component={ForgotPassword} />
-                <Route exact path="/auth/otp" component={OTP} />
-                <Route exact path="/auth/reset" component={ResetPassword} />
-            </Switch>
+            <div className="auth-container">
+                <Switch>
+                    <Route exact path="/auth" component={Login} />
+                    <Route exact path="/auth/forgot" component={ForgotPassword} />
+                    <Route exact path="/auth/otp" component={OTP} />
+                    <Route exact path="/auth/reset" component={ResetPassword} />
+                </Switch>
+            </div>
         </Router>
     );
 }
