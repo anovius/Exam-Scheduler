@@ -1,8 +1,15 @@
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
+import {Auth} from './screens'
 
 function App() {
   return (
     <>
-      <h2>Exam Scheduler</h2>
+      <Router>
+        <Switch>
+          <Route path="/auth" component={Auth}/>
+        </Switch>
+      </Router>
     </>
   );
 }
