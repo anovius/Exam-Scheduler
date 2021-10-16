@@ -49,7 +49,7 @@ Start the client
 - [Junaid Zubair](https://www.github.com/)
 - [Muhammad Asad](https://www.github.com/bcsf18a517)
 - [Muhammad Hashir](https://www.github.com/mhashir1010)
-- [Saad Niazi](https://www.github.com/saadNiaxiDev)
+- [Saad Niazi](https://www.github.com/saadNiaziDev)
 
 
 ## Supervisor
