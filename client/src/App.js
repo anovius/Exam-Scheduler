@@ -1,10 +1,6 @@
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-import {Auth} from './screens'
-
-function NotFound(){
-  return <h1>404 Not Found</h1>
-}
+import { Auth, Admin } from './screens'
 
 function App() {
   return (
@@ -12,7 +8,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/auth" component={Auth}/>
-          <Route path='*' exact={true} component={NotFound} />
+          <Route path="/admin" component={Admin}/>
         </Switch>
       </Router>
     </>
