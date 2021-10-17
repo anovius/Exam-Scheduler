@@ -4,7 +4,13 @@ import './admin.css';
 function Admin() {
   return (
     <>
-        <Layout />
+        <div className="row">
+            <div className="sidebar">
+              <Layout />
+            </div>
+            <div className="col">
+            </div>
+        </div>
     </>
   );
 }

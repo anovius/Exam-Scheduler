@@ -4,7 +4,6 @@ import Sidebar from "./Sidebar";
 function Layout(){
     return (
         <>
-            <Header />
             <Sidebar />
         </>
     );
