@@ -13,9 +13,10 @@ function Header(){
                         <div class="user-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src={UserImage} alt="user"/>
                         </div>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item">Settings</a>
-                            <a class="dropdown-item" >Logout</a>
+                        <div class="dropdown-menu me-4" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item"> <i class="fas fa-user me-2"></i> Profile</a>
+                            <a class="dropdown-item"> <i class="fas fa-cogs me-2"></i> Settings</a>
+                            <a class="dropdown-item" > <i class="fas fa-sign-out-alt me-2"></i> Logout</a>
                         </div>
                   </div>
                     </div>
