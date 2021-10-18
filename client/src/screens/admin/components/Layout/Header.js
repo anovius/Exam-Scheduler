@@ -1,3 +1,5 @@
+import UserImage from '../../../../assets/user.jpeg';
+
 function Header(){
     return (
         <>
@@ -7,7 +9,15 @@ function Header(){
                         <i class="fas fa-bars"></i>
                     </div>
                     <div>
-                        Profile
+                    <div class="dropdown">
+                        <div class="user-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src={UserImage} alt="user"/>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">Settings</a>
+                            <a class="dropdown-item" >Logout</a>
+                        </div>
+                  </div>
                     </div>
                 </div>
             </div>
