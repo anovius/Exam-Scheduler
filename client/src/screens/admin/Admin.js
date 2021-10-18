@@ -6,7 +6,7 @@ function Admin() {
     <>
       <Header />
       <div className="row">
-          <div className="sidebar">
+          <div className="sidebar box-shadow">
             <Sidebar />
           </div>
           <div className="col">

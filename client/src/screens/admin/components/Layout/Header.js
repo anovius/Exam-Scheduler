@@ -1,9 +1,11 @@
+import $ from 'jquery';
 import UserImage from '../../../../assets/user.jpeg';
+
 
 function Header(){
     return (
         <>
-            <div className="header">
+            <div className="header box-shadow">
                 <div className='d-flex justify-content-between'>
                     <div id="menu">
                         <i class="fas fa-bars"></i>
@@ -23,6 +25,7 @@ function Header(){
                 </div>
             </div>
         </>
+        
     );
 }
 

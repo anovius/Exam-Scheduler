@@ -94,8 +94,22 @@
     border-radius: 50%;
 }
 
+.dropdown-menu{
+    border: none;
+}
+
 .dropdown-menu i{
     width: 20px;
+}
+
+.dropdown-item{
+    cursor: pointer;
+    color: var(--text);
+}
+
+.dropdown-item:hover{
+    background-color: var(--green);
+    color: var(--white);
 }
 
 @media screen and (max-width: 1100px) {
