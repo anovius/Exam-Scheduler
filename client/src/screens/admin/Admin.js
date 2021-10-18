@@ -1,16 +1,17 @@
-import { Layout } from './components';
+import { Sidebar, Header } from './components';
 import './admin.css';
 
 function Admin() {
   return (
     <>
-        <div className="row">
-            <div className="sidebar">
-              <Layout />
-            </div>
-            <div className="col">
-            </div>
-        </div>
+      <Header />
+      <div className="row">
+          <div className="sidebar">
+            <Sidebar />
+          </div>
+          <div className="col">
+          </div>
+      </div>
     </>
   );
 }

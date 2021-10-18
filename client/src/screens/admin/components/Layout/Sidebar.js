@@ -5,7 +5,7 @@ function Sidebar(){
         <>
              <div className='container'>
                 <div className="sidebar-logo">
-                    <h2> <img className='m-1' src={logo}/> Exam Scheduler</h2>
+                    <h2> <img className='m-1' src={logo} alt='logo' /> Exam Scheduler</h2>
                 </div>
                 <div className="sidebar-menu">
                     
