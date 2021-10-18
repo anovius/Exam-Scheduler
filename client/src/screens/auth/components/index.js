@@ -1,6 +1,6 @@
 import Login from "./Login";
 import OTP from "./OTP";
-import ForgotPassword from "./ForgotPassword";
+import ForgetPassword from "./ForgetPassword";
 import ResetPassword from "./ResetPassword";
 
-export { Login, OTP, ForgotPassword, ResetPassword };
+export { Login, OTP, ForgetPassword, ResetPassword };
