@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../../assets/logo-light.png"
 function ForgetPassword(){
     return(
@@ -9,8 +10,9 @@ function ForgetPassword(){
                         <i className="fas fa-envelope input-icon"></i>
                         <input type='text' placeholder='Email Address'/><br/>
                     </div>
-                    
-                    <button type="button" className='login-btn'>Send OTP</button>
+                    <Link to='/auth/otp'>
+                        <button type="button" className='login-btn'>Send OTP</button>
+                    </Link>
                 </form>
             </div>
         </>

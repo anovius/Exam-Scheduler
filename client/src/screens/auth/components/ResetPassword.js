@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../../assets/logo-light.png"
 function ResetPassword(){
     return(
@@ -13,7 +14,9 @@ function ResetPassword(){
                         <i className="fas fa-key input-icon"></i>
                         <input type='password' placeholder='Confirm Password'/><br/>
                     </div>
-                    <button type="button" className='login-btn'>Change Password</button>
+                    <Link to='/auth'>
+                        <button type="button" className='login-btn'>Change Password</button>
+                    </Link>
                 </form>
             </div>
         </>

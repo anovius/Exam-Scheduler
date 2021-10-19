@@ -12,7 +12,7 @@ function Auth() {
                         <Route exact path="/auth" component={Login} />
                         <Route exact path="/auth/forget" component={ForgetPassword} />
                         <Route exact path="/auth/otp" component={OTP} />
-                        <Route exact path="/auth/reset" component={ResetPassword} />
+                        <Route exact path="/auth/reset" component={ResetPassword} />                        
                     </Switch>   
                 </div>
             </div>

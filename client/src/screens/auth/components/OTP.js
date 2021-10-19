@@ -8,10 +8,6 @@ function OTP(){
 
     const [otp, setOtp] = useState(0);
 
-    function temp(){
-        console.log(otp);
-    }
-
     return(
         <>
         <div className="col-xs-1" align="center">   
@@ -26,9 +22,11 @@ function OTP(){
                     isInputNum={true}
                     onChange={setOtp}
                 />
-                <button type="button" className='login-btn'>Verify OTP</button><br/>
+                <Link to='/auth/reset'>
+                    <button type="button" className='login-btn'>Verify OTP</button><br/>
+                </Link>
                 <div className="sub-link">
-                    <Link to='/auth/otp'>Haven't recieved ? Resend OTP</Link>
+                    <Link to='/auth/otp'>Haven't received ? Resend OTP</Link>
                 </div>
         </div>
         </>

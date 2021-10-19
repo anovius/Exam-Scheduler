@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo-light.png';
 
 function Login(){
@@ -13,6 +14,9 @@ function Login(){
                     <div className='input-container'>
                         <i className="fas fa-key input-icon"></i>
                         <input type='password' placeholder='Password'/><br/>
+                    </div>
+                    <div className="special">
+                        <Link to='/auth/forget'>Forgot Password ?</Link>
                     </div>
                     <button type="button" className='login-btn'>Login</button>
                 </form>

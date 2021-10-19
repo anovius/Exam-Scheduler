@@ -73,9 +73,21 @@ input{
 
 .sub-link{
     font-size: 14px;
-    margin-top: 10px;
     text-align: right;
+    margin-top: 10px;
 }
+
+.special{
+    font-size: 14px;
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.special a, .special a:hover{
+    color: var(--white);
+}
+
 
 .sub-link a, .sub-link a:hover{
     color: var(--white);
