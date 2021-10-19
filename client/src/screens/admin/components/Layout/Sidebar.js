@@ -12,29 +12,29 @@ function Sidebar(){
                     <h3 className=' mt-4'>Main Menu</h3>
                     <div className='sub-menu mt-4'>
                        <div className='item active'>
-                        <a href='https://google.com' className='active'> <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href='https://google.com' className='active'> <i className="fas fa-tachometer-alt"></i> Dashboard</a>
                        </div>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-bell"></i> Notifications</a>
+                        <a href='https://google.com'> <i className="fas fa-bell"></i> Notifications</a>
                        </div>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-bug"></i> Complaints</a>
+                        <a href='https://google.com'> <i className="fas fa-bug"></i> Complaints</a>
                        </div>
                     </div>
                     
                     <h3 className=' mt-4'>Manage Records</h3>
                     <div className='sub-menu mt-4'>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-users-class"></i> Classes</a>
+                        <a href='https://google.com'> <i className="fas fa-users-class"></i> Classes</a>
                        </div>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-users"></i> Students</a>
+                        <a href='https://google.com'> <i className="fas fa-users"></i> Students</a>
                        </div>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+                        <a href='https://google.com'> <i className="fas fa-chalkboard-teacher"></i> Teachers</a>
                        </div>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-user-friends"></i> Faulty</a>
+                        <a href='https://google.com'> <i className="fas fa-user-friends"></i> Faulty</a>
                        </div>
                     </div>
                     
@@ -42,7 +42,7 @@ function Sidebar(){
                     <h3 className=' mt-4'>Others</h3>
                     <div className='sub-menu mt-4'>
                        <div className='item'>
-                        <a href='https://google.com'> <i class="fas fa-cogs"></i> Settings</a>
+                        <a href='https://google.com'> <i className="fas fa-cogs"></i> Settings</a>
                        </div>
                     </div>
                     
