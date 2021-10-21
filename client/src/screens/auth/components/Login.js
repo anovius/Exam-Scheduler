@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import logo from '../../../assets/logo-light.png';
 
 function Login(){
@@ -18,7 +18,9 @@ function Login(){
                     <div className="special">
                         <Link to='/auth/forget'>Forgot Password ?</Link>
                     </div>
-                    <button type="button" className='login-btn'>Login</button>
+                    <Link to="/admin">
+                        <button type="button" className='login-btn'>Login</button>
+                    </Link>
                 </form>
             </div>
         </>
