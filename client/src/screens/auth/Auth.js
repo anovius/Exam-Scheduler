@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 
 import { Login, ForgetPassword, OTP, ResetPassword } from './components'
 import './auth.css'
