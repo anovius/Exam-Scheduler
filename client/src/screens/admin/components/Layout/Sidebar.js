@@ -6,6 +6,9 @@ function Sidebar(){
     return (
         <>
              <div className='container'>
+                <span className='hide-sidebar'>
+                    <i className="fas fa-times"></i>
+                </span>
                 <div className="sidebar-logo">
                     <h2> <img className='m-1' src={logo} alt='logo' /> Exam Scheduler</h2>
                 </div>

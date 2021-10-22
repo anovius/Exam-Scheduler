@@ -7,7 +7,7 @@ function Header(){
     return (
         <>
             <div className="header box-shadow">
-                <div className='d-flex justify-content-between'>
+                <div className='d-flex justify-content-between align-items-center'>
                     <div id="menu">
                         <i className="fas fa-bars"></i>
                     </div>

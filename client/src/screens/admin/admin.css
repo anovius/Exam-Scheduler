@@ -2,10 +2,18 @@
     height: 100vh;
     padding: 20px;
     width: 300px;
+    position: relative;
     background-color: var(--white);
     z-index: 100;
 }
 
+.hide-sidebar{
+    position: absolute;
+    top: 22px;
+    right: 16px;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 .sidebar-logo h2{
     text-align: center;
@@ -123,6 +131,12 @@
 
 @media screen and (max-width: 1100px) {
     .sidebar{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .hide-sidebar{
         display: none;
     }
 }

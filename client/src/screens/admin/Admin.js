@@ -8,7 +8,7 @@ function Admin() {
     <>
       <Header />
       <div className="container-fluid">
-        <div className="row hide">
+        <div className="row">
           <div className="sidebar box-shadow">
             <Sidebar />
           </div>
