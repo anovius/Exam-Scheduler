@@ -7,7 +7,8 @@ function Admin() {
   return (
     <>
       <Header />
-      <div className="row hide">
+      <div className="container-fluid">
+        <div className="row hide">
           <div className="sidebar box-shadow">
             <Sidebar />
           </div>
@@ -23,6 +24,7 @@ function Admin() {
               </Switch>
             </div>
           </div>
+        </div>
       </div>
     </>
   );
