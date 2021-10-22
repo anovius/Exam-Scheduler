@@ -20,4 +20,12 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+  <script>
+    $("#menu").click(function() {
+      $(".sidebar").show('slide', {direction: 'left'}, 1400);
+    });
+    $(".hide").click(function() {
+      $(".sidebar").hide('slide', {direction: 'left'}, 1400);
+    });
+  </script>
 </html>

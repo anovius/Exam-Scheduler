@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 import UserImage from '../../../../assets/user.jpeg';
