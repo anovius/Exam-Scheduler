@@ -119,9 +119,13 @@
     color: var(--white);
 }
 
+.row .col{
+    background-color: var(--shadow);
+}
+
 .admin-container{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: var(--shadow);
     display: flex;
     justify-content: center;
@@ -129,9 +133,73 @@
     z-index: -2;
 }
 
+.table-container{
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.schedule-date{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.custom-btn{
+    width: 100px;
+    padding: 5px 20px 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.schedule-title{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+tr, th, td, .col, thead, tbody{
+    border: none !important;
+}
+
+thead{
+    border-radius: 6px;
+    padding: 10px;
+}
+
+td:first-child { 
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px;
+}
+  
+td:last-child { 
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+}
+
+td, th{
+    padding-left: 20px !important;
+}
+
+.table-data{
+    line-height: 30px;
+}
+
+.active{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px !important;
+}
+
 @media screen and (max-width: 1100px) {
     .sidebar{
         display: none;
+    }
+
+    .table-container{
+        margin-top: 60px;
     }
 }
 

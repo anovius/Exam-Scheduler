@@ -21,7 +21,7 @@ function Header(){
                             <Link class="dropdown-item"> <i class="fas fa-cogs me-2"></i> Settings</Link>
                             <Link to="/auth" class="dropdown-item" > <i class="fas fa-sign-out-alt me-2"></i> Logout</Link>
                         </div>
-                  </div>
+                    </div>
                     </div>
                 </div>
             </div>
