@@ -20,8 +20,9 @@ function Schedule() {
                         <button className="custom-btn background-blue ">Filter</button>
                     </div>
                 </div>
-                <table className="table mt-4">
-                <thead className="box-shadow-bottom">
+                <div className="table-responsive">
+                  <table className="table table-responsive">
+                    <thead className="box-shadow-bottom">
                     <tr>
                         <th scope="col">Date</th>
                         <th scope="col">Day</th>
@@ -75,6 +76,7 @@ function Schedule() {
                     </tr>
                 </tbody>
                 </table>
+                </div>
                 <div className='d-flex justify-content-center align-items-center pl-2'>
                     <div>
                         <button disabled className="custom-btn disabled me-4">Prev</button>

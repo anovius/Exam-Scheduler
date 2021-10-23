@@ -56,3 +56,11 @@ a{
     background-color: var(--shadow);
     cursor: no-drop;
 }
+
+.solved-color{
+    color:green;
+}
+
+.pending-color{
+    color:blue;
+}

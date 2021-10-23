@@ -1,7 +1,86 @@
 function Complaints() {
     return(
         <>
-            <p>Complaints Works</p>
+            <div className="col-md-11 table-container box-shadow" align="center">
+                <div className='d-flex justify-content-between align-items-center'>
+                    <div className="schedule-title">
+                        Complaints
+                    </div>
+                    <div>
+                        <button className="custom-btn background-green">Create</button>
+                    </div>
+                </div>
+                <div className="table-responsive mt-4">
+                  <table className="table table-responsive">
+                    <thead className="box-shadow-bottom">
+                    <tr>
+                        <th scope="col">Roll no</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr className="table-data">
+                        <td>Bcsf18a511</td>
+                        <td>Computer Architecture</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a501</td>
+                        <td>Operating System</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a530</td>
+                        <td>Discrete Mathematics</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a514</td>
+                        <td>Analysis of Algorithm</td>
+                        <td className="solved-color">Solved</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a529</td>
+                        <td>Basic Electronics</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a522</td>
+                        <td>Computer Architecture</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a525</td>
+                        <td>Web Engineering</td>
+                        <td className="pending-color">Pending</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                    <tr className="table-data">
+                        <td>Bcsf18a517</td>
+                        <td>Theory of Automata</td>
+                        <td className="solved-color">Solved</td>
+                        <td>12:00 PM</td>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
+                <div className='d-flex justify-content-center align-items-center pl-2'>
+                    <div>
+                        <button disabled className="custom-btn disabled me-4">Prev</button>
+                    </div>
+                    <div>
+                        <button className="custom-btn background-blue">Next</button>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
