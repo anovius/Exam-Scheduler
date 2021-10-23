@@ -187,6 +187,8 @@ td, th{
     line-height: 30px;
 }
 
+
+
 .active{
     background-color: var(--blue);
     color: var(--white);
