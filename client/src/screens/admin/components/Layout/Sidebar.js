@@ -20,7 +20,7 @@ function Sidebar(){
                         <Link to='/admin' className='active'> <i className="fas fa-tachometer-alt"></i> Dashboard</Link>
                        </div>
                        <div className='item'>
-                        <Link to='/admin'> <i className="fas fa-bell"></i> Notifications</Link>
+                        <Link to='/admin/notifications'> <i className="fas fa-bell"></i> Notifications</Link>
                        </div>
                        <div className='item'>
                         <Link to='/admin/complaints'> <i className="fas fa-bug"></i> Complaints</Link>
@@ -47,7 +47,7 @@ function Sidebar(){
                     <h3 className=' mt-4'>Others</h3>
                     <div className='sub-menu mt-4'>
                        <div className='item'>
-                        <Link to='/admin'> <i className="fas fa-cogs"></i> Settings</Link>
+                        <Link to='/admin/settings'> <i className="fas fa-cogs"></i> Settings</Link>
                        </div>
                     </div>
                     
