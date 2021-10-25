@@ -17,7 +17,6 @@ function Header(){
                             <img src={UserImage} alt="user"/>
                         </div>
                         <div class="dropdown-menu me-4" aria-labelledby="dropdownMenuButton">
-                            <Link class="dropdown-item"> <i class="fas fa-user me-2"></i> Profile</Link>
                             <Link class="dropdown-item"> <i class="fas fa-cogs me-2"></i> Settings</Link>
                             <Link to="/auth" class="dropdown-item" > <i class="fas fa-sign-out-alt me-2"></i> Logout</Link>
                         </div>

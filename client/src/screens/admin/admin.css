@@ -237,6 +237,8 @@ td, th{
     .custom-table{
         width: 320px;
         overflow-x: scroll;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     td, th{
