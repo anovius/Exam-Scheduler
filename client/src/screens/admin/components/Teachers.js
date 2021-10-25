@@ -8,7 +8,7 @@ function Teachers() {
                         Teachers
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Create</button>
+                        <button className="custom-btn background-green">Add</button>
                     </div>
                 </div>
                 <div className="table-responsive mt-4">
