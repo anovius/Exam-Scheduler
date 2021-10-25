@@ -24,49 +24,49 @@ function Complaints() {
                     <tr className="table-data">
                         <td>Bcsf18a511</td>
                         <td>Computer Architecture</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a501</td>
                         <td>Operating System</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a530</td>
                         <td>Discrete Mathematics</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a514</td>
                         <td>Analysis of Algorithm</td>
-                        <td className="solved-color">Solved</td>
+                        <td className="color-success">Solved</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a529</td>
                         <td>Basic Electronics</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a522</td>
                         <td>Computer Architecture</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a525</td>
                         <td>Web Engineering</td>
-                        <td className="pending-color">Pending</td>
+                        <td className="color-info">Pending</td>
                         <td>12:00 PM</td>
                     </tr>
                     <tr className="table-data">
                         <td>Bcsf18a517</td>
                         <td>Theory of Automata</td>
-                        <td className="solved-color">Solved</td>
+                        <td className="color-success">Solved</td>
                         <td>12:00 PM</td>
                     </tr>
                 </tbody>

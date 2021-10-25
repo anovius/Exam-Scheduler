@@ -57,10 +57,14 @@ a{
     cursor: no-drop;
 }
 
-.solved-color{
-    color:green;
+.color-success{
+    color: #42C9A8;
 }
 
-.pending-color{
-    color:blue;
+.color-info{
+    color: #2F89FC;
+}
+
+.color-danger{
+    color: #F44336;
 }

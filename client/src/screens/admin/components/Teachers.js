@@ -17,8 +17,8 @@ function Teachers() {
                     <tr>
                         <th scope="col">Teacher Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Contant</th>
-                        <th scope="col">Availibility</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Availability</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,49 +26,49 @@ function Teachers() {
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="solved-color">Not Availiable</td>
+                        <td className="color-danger">Not Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="pending-color">Availiable</td>
+                        <td className="color-success">Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="solved-color">Not Availiable</td>
+                        <td className="color-danger">Not Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="pending-color">Availiable</td>
+                        <td className="color-success">Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="pending-color">Availiable</td>
+                        <td className="color-success">Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="solved-color">Not Availiable</td>
+                        <td className="color-danger">Not Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amteen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="pending-color">Availiable</td>
+                        <td className="color-success">Available</td>
                     </tr>
                     <tr className="table-data">
                         <td>Sir Abdul Mateen</td>
                         <td>amateen@pucit.edu.pk</td>
                         <td>+92345678910</td>
-                        <td className="solved-color">Not Availiable</td>
+                        <td className="color-danger">Not Available</td>
                     </tr>
                     
                 </tbody>
