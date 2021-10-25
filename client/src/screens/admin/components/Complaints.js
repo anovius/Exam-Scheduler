@@ -7,7 +7,10 @@ function Complaints() {
                         Complaints
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Create</button>
+                        <div className="search-container">
+                            <i className="fas fa-search"></i>
+                            <input type="text" placeholder="Search"></input>
+                        </div>
                     </div>
                 </div>
                 <div className="table-responsive mt-4">

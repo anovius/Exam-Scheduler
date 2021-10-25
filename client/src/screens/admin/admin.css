@@ -180,7 +180,9 @@ td:last-child {
 }
 
 td, th{
-    padding-left: 20px !important;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .table-data{
@@ -193,6 +195,32 @@ td, th{
     background-color: var(--blue);
     color: var(--white);
     border-radius: 10px !important;
+}
+
+.search-container{
+    width: 150px;
+    height: 30px;
+    background-color: var(--shadow);
+    border-radius: 50px;
+    color: var(--text);
+}
+
+.search-container i{
+    margin: 10px 0px 0px 15px;
+    font-size: 12px;
+    float: left;
+
+}
+
+.search-container input{
+    float: left;
+    height: 100%;
+    width: 110px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--text);
+    font-size: 12px;
 }
 
 @media screen and (max-width: 1100px) {
