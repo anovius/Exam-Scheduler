@@ -3,15 +3,15 @@ function Students() {
         <>
             <div className="col-md-11 table-container box-shadow" align="center">
                 <div className='d-flex justify-content-between align-items-center'>
-                    <div className="schedule-title">
+                    <div className="schedule-title m-2">
                         Students
                     </div>
                     <div>
                         <button className="custom-btn background-green">Add</button>
                     </div>
                 </div>
-                <div className="table-responsive mt-4">
-                  <table className="table table-responsive">
+                <div className="custom-table mt-4">
+                  <table className="table">
                     <thead className="box-shadow-bottom">
                     <tr>
                         <th scope="col">Name</th>
