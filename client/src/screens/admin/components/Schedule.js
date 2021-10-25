@@ -20,8 +20,8 @@ function Schedule() {
                         <button className="custom-btn background-blue ">Filter</button>
                     </div>
                 </div>
-                <div className="table-responsive">
-                  <table className="table table-responsive">
+                <div className="custom-table">
+                  <table className="table">
                     <thead className="box-shadow-bottom">
                     <tr>
                         <th scope="col">Date</th>
