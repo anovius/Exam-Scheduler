@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router';
 
-import { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty  } from './components';
+import { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass  } from './components';
 import { Notifications, Settings } from '../shared';
 import './admin.css';
 
@@ -24,6 +24,7 @@ function Admin() {
                 <Route exact path="/admin/faculty" component = {Faculty} />
                 <Route exact path="/admin/notifications" component = {Notifications} />
                 <Route exact path="/admin/settings" component = {Settings} />
+                <Route exact path="/admin/addClass" component = {AddClass} />
               </Switch>
             </div>
             </div>

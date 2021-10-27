@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Classes() {
     return(
         <>
@@ -7,7 +9,9 @@ function Classes() {
                         Classes
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Add</button>
+                        <Link to="/admin/addClass">
+                            <button className="custom-btn background-green">Add</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="custom-table mt-4">
