@@ -57,6 +57,11 @@ a{
     cursor: no-drop;
 }
 
+.color-white{
+    color: white;
+}
+
+
 .color-success{
     color: #42C9A8;
 }

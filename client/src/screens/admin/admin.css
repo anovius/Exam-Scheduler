@@ -223,6 +223,14 @@ td, th{
     font-size: 12px;
 }
 
+.modal-header {
+    border-bottom: 0 none;
+}
+
+.modal-footer {
+    border-top: 0 none;
+}
+
 @media screen and (max-width: 1100px) {
     .sidebar{
         display: none;
