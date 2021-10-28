@@ -18,7 +18,7 @@
   
 html {
     box-sizing: border-box;
-    overflow-y: hidden;
+    background-color: var(--background);
 }
   
 html body {
