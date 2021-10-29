@@ -139,6 +139,11 @@
     padding: 20px;
 }
 
+.custom-table{
+    height: 350px;
+    overflow-y: scroll;
+}
+
 .schedule-date{
     font-size: 14px;
     font-weight: 500;
