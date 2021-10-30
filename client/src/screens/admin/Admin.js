@@ -24,7 +24,7 @@ function Admin() {
                 <Route exact path="/admin/faculty" component = {Faculty} />
                 <Route exact path="/admin/notifications" component = {Notifications} />
                 <Route exact path="/admin/settings" component = {Settings} />
-                <Route exact path="/admin/addClass" component = {AddClass} />
+                <Route exact path="/admin/classes/add" component = {AddClass} />
               </Switch>
             </div>
             </div>

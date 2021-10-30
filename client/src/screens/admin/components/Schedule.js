@@ -1,7 +1,7 @@
 function Schedule() {
     return(
         <>
-            <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="filets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -10,41 +10,31 @@ function Schedule() {
                         <div className="modal-body">
                             <div className='d-flex justify-content-left '>
                                 <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="degree" ></input>
-                                    <label className="form-check-label" for="flexRadioDefault1">
+                                    <input className="form-check-input" type="radio" name="degree" checked></input>
                                         CS
-                                    </label>
                                 </div>
                                 <div className="form-check me-4" >
-                                    <input className="form-check-input" type="radio" name="degree" id="flexRadioDefault2" checked></input>
-                                    <label className="form-check-label" for="flexRadioDefault2">
+                                    <input className="form-check-input" type="radio" name="degree"></input>
                                         SE
-                                    </label>
                                 </div>
                                 <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="degree" id="flexRadioDefault2"></input>
-                                    <label className="form-check-label" for="flexRadioDefault2">
+                                    <input className="form-check-input" type="radio" name="degree"></input>
                                         IT
-                                    </label>
                                 </div>
                             </div>
                             <div className='d-flex justify-content-left mt-4'>
                                 <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="section" ></input>
-                                    <label className="form-check-label" for="flexRadioDefault1">
+                                    <input className="form-check-input" type="radio" name="section" checked></input>
                                         Morning
-                                    </label>
                                 </div>
                                 <div className="form-check me-4 mb-2" >
-                                    <input className="form-check-input" type="radio" name="section" id="flexRadioDefault2" checked></input>
-                                    <label className="form-check-label" for="flexRadioDefault2">
+                                    <input className="form-check-input" type="radio" name="section"></input>
                                         Afternoon
-                                    </label>
                                 </div>
                             </div>
                             <div class="col-sm-4 ">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Select year</option>
+                                <select class="form-select box-shadow">
+                                    <option value="" disabled selected>Select Year</option>
                                     <option value="2018">2018</option>
                                     <option value="2019">2019</option>
                                     <option value="2020">2020</option>
@@ -74,7 +64,7 @@ function Schedule() {
                         BSCS Session Fall 2018
                     </div>
                     <div>
-                        <button className="custom-btn background-blue" data-toggle="modal" data-target="#exampleModal">Filter</button>
+                        <button className="custom-btn background-blue" data-toggle="modal" data-target="#filets">Filter</button>
                     </div>
                 </div>
                 <div className="custom-table">

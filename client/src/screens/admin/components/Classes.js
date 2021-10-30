@@ -9,7 +9,7 @@ function Classes() {
                         Classes
                     </div>
                     <div>
-                        <Link to="/admin/addClass">
+                        <Link to="/admin/classes/add">
                             <button className="custom-btn background-green">Add</button>
                         </Link>
                     </div>
