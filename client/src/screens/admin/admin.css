@@ -41,19 +41,23 @@
     padding: 0 25px 0 25px;
 }
 
-.sub-menu .item{
+.sub-menu a{
+    display: block;
     margin-top: 20px;
     padding: 5px;
+    padding-left: 15px;
     border-radius: 5px;
     transition: 0.5s;
+    background-color: transparent;
+    color: var(--text);
 }
 
-.sub-menu .item i{
+.sub-menu a i{
    margin-right: 8px;
 }
 
 
-.sub-menu .item:hover{
+.sub-menu a:hover{
     background-color: var(--shadow);
 }
 
@@ -62,17 +66,6 @@
     color: var(--white);
 }
 
-
-.sub-menu .item a{
-    padding-left: 15px;
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text);
-}
-
-.sub-menu .item .active{
-    color: var(--white);
-}
 
 .header{
     width: 100%;

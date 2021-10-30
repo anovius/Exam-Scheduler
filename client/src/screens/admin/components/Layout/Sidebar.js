@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../../../../assets/logo-dark.png';
 
@@ -14,43 +14,25 @@ function Sidebar(){
                 </div>
                 <div className="sidebar-menu">
                     
-                    <h3 className=' mt-4'>Main Menu</h3>
+                    <h3 className='mt-4'>Main Menu</h3>
                     <div className='sub-menu mt-4'>
-                       <div className='item active'>
-                        <Link to='/admin' className='active'> <i className="fas fa-tachometer-alt"></i> Dashboard</Link>
-                       </div>
-                       <div className='item'>
-                        <Link to='/admin/notifications'> <i className="fas fa-bell"></i> Notifications</Link>
-                       </div>
-                       <div className='item'>
-                        <Link to='/admin/complaints'> <i className="fas fa-bug"></i> Complaints</Link>
-                       </div>
+                        <NavLink exact to='/admin' activeClassName='active'> <i className="fas fa-tachometer-alt"></i> Dashboard</NavLink>
+                        <NavLink to='/admin/notifications' activeClassName='active'> <i className="fas fa-bell"></i> Notifications</NavLink>
+                        <NavLink to='/admin/complaints' activeClassName='active'> <i className="fas fa-bug"></i> Complaints</NavLink>
                     </div>
-                    
-                    <h3 className=' mt-4'>Manage Records</h3>
+
+                    <h3 className='mt-4'>Manage Records</h3>
                     <div className='sub-menu mt-4'>
-                       <div className='item'>
-                        <Link to='/admin/classes'> <i className="fas fa-users-class"></i> Classes</Link>
-                       </div>
-                       <div className='item'>
-                        <Link to='/admin/students'> <i className="fas fa-users"></i> Students</Link>
-                       </div>
-                       <div className='item'>
-                        <Link to='/admin/teachers'> <i className="fas fa-chalkboard-teacher"></i> Teachers</Link>
-                       </div>
-                       <div className='item'>
-                        <Link to='/admin/faculty'> <i className="fas fa-user-friends"></i> Faculty</Link>
-                       </div>
+                        <NavLink to='/admin/classes' activeClassName='active'> <i className="fas fa-users-class"></i> Classes</NavLink>
+                        <NavLink to='/admin/students' activeClassName='active'> <i className="fas fa-users"></i> Students</NavLink>
+                        <NavLink to='/admin/teachers' activeClassName='active'> <i className="fas fa-chalkboard-teacher"></i> Teachers</NavLink>
+                        <NavLink to='/admin/faculty' activeClassName='active'> <i className="fas fa-user-friends"></i> Faculty</NavLink>
                     </div>
-                    
-                    
-                    <h3 className=' mt-4'>Others</h3>
+
+                    <h3 className='mt-4'>Others</h3>
                     <div className='sub-menu mt-4'>
-                       <div className='item'>
-                        <Link to='/admin/settings'> <i className="fas fa-cogs"></i> Settings</Link>
-                       </div>
+                        <NavLink to='/admin/settings' activeClassName='active'> <i className="fas fa-cogs"></i> Settings</NavLink>
                     </div>
-                    
                 </div>
              </div>
         </>
