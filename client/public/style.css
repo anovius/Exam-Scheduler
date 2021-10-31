@@ -7,6 +7,7 @@
     --green: #40514E;
     --blue: #2F89FC;
     --text: #777777;
+    --gray: #e2e2e2;
     --heading: #373737;
     --shadow: #eeeeee;
 }
@@ -72,4 +73,28 @@ a{
 
 .color-danger{
     color: #F44336;
+}
+
+hr{
+    color: var(--text);
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #454545 #ffffff;
+}
+
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #454545;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
 }

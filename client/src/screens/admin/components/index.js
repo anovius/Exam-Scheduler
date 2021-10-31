@@ -7,6 +7,9 @@ import Students from "./Students";
 import Teachers from "./Teachers";
 import Faculty from "./Faculty";
 import AddClass from "./Records/AddClass";
+import AddStudent from "./Records/AddStudent";
+import AddTeacher from "./Records/AddTeacher";
+import AddFaculty from "./Records/AddFaculty";
 
 
-export { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass };
+export { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass, AddStudent, AddTeacher, AddFaculty };

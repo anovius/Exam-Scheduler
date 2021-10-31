@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Teachers() {
     return(
         <>
@@ -8,7 +9,9 @@ function Teachers() {
                         Teachers
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Add</button>
+                    <Link to="/admin/teachers/add">
+                            <button className="custom-btn background-green">Add</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="custom-table mt-4">
