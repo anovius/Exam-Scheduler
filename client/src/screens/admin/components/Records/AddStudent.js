@@ -7,7 +7,6 @@ function AddStudent(){
                 <hr/>
                 <div className="add-form">
                     <form>  
-                    
                     <div className="form-group">
                         <label> <i className="fas fa-user"></i> Name</label><br/>
                         <input type="text" placeholder="eg: Junaid Zubair" />
@@ -24,7 +23,6 @@ function AddStudent(){
                         <label> <i className="fas fa-users-class"></i> Class</label><br/>
                         <input type="text" placeholder="eg: BCS Afternoon F18" />
                     </div>
-                    
                     <button type="button" className="submit background-green mt-4 mb-3"> Add Student</button> 
                     </form>
                 </div>
