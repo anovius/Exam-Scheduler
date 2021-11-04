@@ -14,7 +14,7 @@ function Admin() {
             <Sidebar />
           </div>
           <div className="col">
-            <div className="admin-container">
+            <div className="center-container">
               <Switch>
                 <Route exact path="/admin" component = {Schedule} />
                 <Route exact path="/admin/complaints" component = {Complaints} />
