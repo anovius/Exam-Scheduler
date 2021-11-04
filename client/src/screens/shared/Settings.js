@@ -1,7 +1,41 @@
+import "./shared.css"
+
+import UserImage from '../../assets/user.png';
+
 function Settings() {
     return (
         <>
-            Settings Works!
+         <div className="col-md-3 add-container" align="center">
+                <div className="add-form">
+                    <form>  
+                    <div class="profile-pic">
+                    <img src={UserImage} className="image" alt="user"/>
+                        <div className="overlay">
+                        <a href="#" className="icon" title="User Profile">
+                        <i className="fas fa-camera"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label> <i className="fas fa-graduation-cap"></i> Email</label><br/>
+                        <input type="text" placeholder="eg: bcsf18501@pucit.edu.pk" />
+                    </div>
+                    <div className="form-group">
+                        <label> <i className="fas fa-lock-open"></i> Current Password</label><br/>
+                        <input type="text" placeholder="***********" />
+                    </div>   
+                    <div className="form-group">
+                        <label> <i className="fas fa-lock-open"></i> New Password</label><br/>
+                        <input type="text" placeholder="***********" />
+                    </div>  
+                    <div className="form-group">
+                        <label> <i className="fas fa-lock"></i> Confirm Password</label><br/>
+                        <input type="text" placeholder="***********" />
+                    </div>
+                    <button type="button" className="submit background-green mt-4 mb-3"> Update</button> 
+                    </form>
+                </div>
+            </div>
         </>
     );
 }
