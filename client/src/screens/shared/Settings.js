@@ -11,14 +11,10 @@ function Settings() {
                     <div class="profile-pic">
                     <img src={UserImage} className="image" alt="user"/>
                         <div className="overlay">
-                        <a href="#" className="icon" title="User Profile">
-                        <i className="fas fa-camera"></i>
+                            <a href="#" className="icon" title="User Profile">
+                            <i className="fas fa-camera"></i>
                         </a>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label> <i className="fas fa-graduation-cap"></i> Email</label><br/>
-                        <input type="text" placeholder="eg: bcsf18501@pucit.edu.pk" />
                     </div>
                     <div className="form-group">
                         <label> <i className="fas fa-lock-open"></i> Current Password</label><br/>
