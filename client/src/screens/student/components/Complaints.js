@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Complaints() {
     return(
         <>
@@ -7,7 +9,9 @@ function Complaints() {
                         Complaints
                     </div>
                     <div>
+                        <Link to ="/student/complaints/add">
                     <button className="custom-btn background-blue">Add</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="custom-table mt-4">

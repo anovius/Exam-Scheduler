@@ -447,3 +447,38 @@ select:focus{
         display: none;
     }
 }
+
+.description-form label{
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--heading);
+}
+
+.description-form input{
+    width: 90%;
+    height: 205px;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--text);
+}
+
+.description-form input::placeholder{
+    color: rgb(207, 207, 207);
+    font-weight: 350;
+}
+
+.description-form .submit{
+    border: none;
+    width: 90%;
+    height: 200px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+}
