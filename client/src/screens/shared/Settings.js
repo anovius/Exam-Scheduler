@@ -11,9 +11,9 @@ function Settings() {
                     <div class="profile-pic">
                     <img src={UserImage} className="image" alt="user"/>
                         <div className="overlay">
-                            <a href="#" className="icon" title="User Profile">
+                            <i className="icon" title="User Profile">
                             <i className="fas fa-camera"></i>
-                        </a>
+                        </i>
                         </div>
                     </div>
                     <div className="form-group">

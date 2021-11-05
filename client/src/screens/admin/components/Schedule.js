@@ -1,6 +1,7 @@
 function Schedule() {
     return(
         <>
+            
             <div className="modal fade" id="filets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
@@ -49,6 +50,7 @@ function Schedule() {
                 </div>
             </div>
             <div className="col-md-11 table-container box-shadow" align="center">
+                
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className="schedule-date">
                         <i className="fas fa-calendar-week me-2"></i>
@@ -131,6 +133,9 @@ function Schedule() {
                     <div>
                         <button className="custom-btn background-blue">Next</button>
                     </div>
+                </div>
+                <div className="edit-float">
+                    <i class="fas fa-edit"></i>
                 </div>
             </div>
         </>
