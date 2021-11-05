@@ -18,15 +18,15 @@ function Settings() {
                     </div>
                     <div className="form-group">
                         <label> <i className="fas fa-lock-open"></i> Current Password</label><br/>
-                        <input type="text" placeholder="***********" />
+                        <input type="password" placeholder="***********" />
                     </div>   
                     <div className="form-group">
                         <label> <i className="fas fa-lock-open"></i> New Password</label><br/>
-                        <input type="text" placeholder="***********" />
+                        <input type="password" placeholder="***********" />
                     </div>  
                     <div className="form-group">
                         <label> <i className="fas fa-lock"></i> Confirm Password</label><br/>
-                        <input type="text" placeholder="***********" />
+                        <input type="password" placeholder="***********" />
                     </div>
                     <button type="button" className="submit background-green mt-4 mb-3"> Update</button> 
                     </form>
