@@ -386,6 +386,17 @@ select:focus{
     color: var(--text);
 }
 
+.add-form textarea{
+    width: 90%;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    font-size: 14px;
+    font-weight: 450;
+    color: var(--text);
+}
+
 .add-form input::placeholder{
     color: rgb(207, 207, 207);
     font-weight: 350;

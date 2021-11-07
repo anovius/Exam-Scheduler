@@ -12,7 +12,7 @@ function AddComplaint(){
                     </div>  
                     <div className="description-form">
                         <label> <i className="fas fa-comment"></i> Description</label><br/>
-                        <input type="text" />
+                        <textarea rows="10"></textarea>
                     </div>  
                     <button type="button" className="submit background-green mt-4 mb-3"> Submit</button> 
                     </form>
