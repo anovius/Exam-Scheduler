@@ -1,7 +1,7 @@
 function AddComplaint(){
     return (
         <>
-            <div className="col-md-8 add-container" align="center">
+            <div className="col-md-8 add-container mt-4" align="center">
                 <h5>Add Your Complain</h5>
                 <p>You can add complain here.Administration will take furthur actions if required.</p>
                 <div className="add-form">
