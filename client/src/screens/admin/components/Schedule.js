@@ -77,6 +77,7 @@ function Schedule() {
                         <th scope="col">Day</th>
                         <th scope="col">Course</th>
                         <th scope="col">Time</th>
+                        <th scope="col">Room</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -86,6 +87,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                     <tr className="table-data">
@@ -93,6 +95,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                     <tr className="table-data">
@@ -100,6 +103,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                     <tr className="table-data active">
@@ -107,6 +111,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                     <tr className="table-data">
@@ -114,6 +119,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                     <tr className="table-data">
@@ -121,6 +127,7 @@ function Schedule() {
                         <td>Monday</td>
                         <td>Data Structures</td>
                         <td>12:00 PM</td>
+                        <td>A24</td>
                         <td> <i className="fas fa-clipboard-list"></i></td>
                     </tr>
                 </tbody>

@@ -342,6 +342,7 @@ select:focus{
 }
 
 .add-container{
+    min-width: 300px;
     background-color: white;
     padding: 10px;
     padding-top: 25px;
