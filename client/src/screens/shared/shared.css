@@ -47,3 +47,11 @@
   .fa-user:hover {
     color: #eee;
   }
+
+  .file-drop{
+    width: 90%;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    cursor: pointer;
+  }
