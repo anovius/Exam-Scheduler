@@ -1,3 +1,5 @@
+import Upload from "../../../shared/Upload";
+
 function AddStudent(){
     return (
         <>
@@ -26,6 +28,7 @@ function AddStudent(){
                     <button type="button" className="submit background-green mt-4 mb-3"> Add Student</button> 
                     </form>
                 </div>
+                <Upload/>
             </div>
         </>
     );
