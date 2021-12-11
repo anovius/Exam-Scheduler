@@ -27,6 +27,7 @@ function Sidebar(){
                         <NavLink to='/admin/students' activeClassName='active'> <i className="fas fa-users"></i> Students</NavLink>
                         <NavLink to='/admin/teachers' activeClassName='active'> <i className="fas fa-chalkboard-teacher"></i> Teachers</NavLink>
                         <NavLink to='/admin/faculty' activeClassName='active'> <i className="fas fa-user-friends"></i> Faculty</NavLink>
+                        <NavLink to='/admin/others' activeClassName='active'> <i className="fas fa-user-friends"></i> Others</NavLink>
                     </div>
 
                     <h3 className='mt-4'>Others</h3>

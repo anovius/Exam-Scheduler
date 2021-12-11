@@ -86,7 +86,7 @@ hr{
 
 
 *::-webkit-scrollbar {
-    width: 16px;
+    width: 0px;
 }
 
 *::-webkit-scrollbar-track {
@@ -107,6 +107,8 @@ hr{
     position: relative;
     background-color: var(--white);
     z-index: 100;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .hide-sidebar{
