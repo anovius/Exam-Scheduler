@@ -29,7 +29,25 @@ function Others(){
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
+        <div className="modal fade" id="time" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Room</h5>
+                        </div>
+                        <div className="modal-body">
+                            <div>
+                                <input className="input-field "type="text"  min="00:00" max="23:59" onFocus={(e) => (e.currentTarget.type = "time")} placeholder="Starting Time" />                            
+                                <input className="input-field "type="text"  min="00:00" max="23:59" onFocus={(e) => (e.currentTarget.type = "time")} placeholder="Ending Time" />                            
+                            </div>
+                        <div className="modal-footer">
+                            <button type="button" className="custom-btn background-blue" data-dismiss="modal">Apply</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
         <div className="col-md-11 table-container box-shadow">
             <Tabs>
                 <TabList>
@@ -53,7 +71,7 @@ function Others(){
                 </TabPanel>
                 <TabPanel>
                     <div className="col-md-12">
-                            <div className='slots'>
+                            <div className='slots' data-toggle="modal" data-target="#time">
                                 8:30 AM - 10:00 AM
                             </div>
                             <div className='slots'>
