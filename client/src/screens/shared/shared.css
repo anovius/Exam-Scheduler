@@ -63,6 +63,7 @@
     background-color: var(--white);
     border-radius: 10px;
     padding: 20px;
+    margin-top: 10px;
   }
 
   .notification .notification-icon{
@@ -73,9 +74,9 @@
 
   .notification .close-icon{
     position: relative;
-    right: -60px;
+    right: 0px;
     font-size: 20px;
-    color: var(--text);
+    color: rgb(175, 92, 92);
     margin-left: 20px;
   }
 
