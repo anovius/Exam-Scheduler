@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 
-import { Auth, Admin, Student, Teacher } from './screens'
+import { Auth, Admin, Student, Teacher, Schedule } from './screens'
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
           <Route path="/admin" component={Admin}/>
           <Route path="/student" component={Student}/>
           <Route path="/teacher" component={Teacher}/>
+          <Route path="/schedule" component={Schedule}/>
           <Route exact path="/">
             <Redirect to="/auth" />
           </Route>
