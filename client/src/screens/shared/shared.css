@@ -55,3 +55,33 @@
     background-color: #fafafa;
     cursor: pointer;
   }
+
+  .notification{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .notification .notification-icon{
+    float: left;
+    font-size: 40px;
+    color: var(--heading);
+  }
+
+  .notification .close-icon{
+    position: relative;
+    right: -60px;
+    font-size: 20px;
+    color: var(--text);
+    margin-left: 20px;
+  }
+
+  .notification .text{
+    float: left;
+    margin-left: 35px;
+    margin-top: 10px;
+    color: var(--text);
+  }
