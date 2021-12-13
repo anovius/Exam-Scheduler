@@ -1,29 +1,33 @@
 import { useState } from "react";
 
+import logo from "../../../assets/logo-dark.png";
+
 function Create(){
     const [stepNumber, setStepNumber] = useState(0);
 
     return(
         <>
             <div className="schedule-container">
-                <div className="col-md-6 col-12 wizard box-shadow d-flex align-items-center">
+                <div className="col-md-6 col-12 wizard box-shadow d-flex">
                     <div className="main col-md-8">
+                        <img src={logo} alt="logo" className="logo"/>
+                        <h3 className="ms-4 mb-4">Schedule Details</h3>
                         <form>
                             <div class="row mx-0 mb-3">
                             <div class="col">
                                 <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="Title"/>
+                                <input type="text" class="form-control" placeholder="e.g. Mid Term Fall 19"/>
                             </div>
                             </div>
                             <div class="row mx-0">
-                            <div class="col">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="Starting Date"/>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="Ending Date"/>
-                            </div>
+                                <div class="col">
+                                    <label class="form-label">Starting Date</label>
+                                    <input type="text" class="form-control"/>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Ending Date</label>
+                                    <input type="text" class="form-control"/>
+                                </div>
                             </div>
                         </form>
                     </div>

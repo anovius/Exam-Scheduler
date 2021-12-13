@@ -22,3 +22,13 @@
     right: 0px;
     padding: 20px;
 }
+
+.wizard input{
+    height: 50px;
+}
+
+.wizard label{
+    margin-left: 10px;
+    font-size: 16px;
+    color: var(--text);
+}
