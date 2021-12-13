@@ -217,10 +217,6 @@ hr{
     color: var(--white);
 }
 
-.row .col{
-    background-color: var(--shadow);
-}
-
 .center-container{
     margin-top: 80px;
     width: 100%;
