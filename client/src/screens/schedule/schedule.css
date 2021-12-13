@@ -1,11 +1,27 @@
+.schedule-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
 
-@import "../../../node_modules/@syncfusion/ej2-base/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-calendars/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-lists/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-navigations/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-popups/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-react-schedule/styles/material.css";
+.wizard{
+    height: 500px;
+    background-color: var(--white);
+    position: relative;
+}
+
+.wizard .main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+}
+
+.wizard .navigation{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 20px;
+}
