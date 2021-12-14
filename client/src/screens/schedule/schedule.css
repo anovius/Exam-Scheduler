@@ -10,6 +10,8 @@
     height: 500px;
     background-color: var(--white);
     position: relative;
+    border-radius: 10px;
+    overflow: scroll;
 }
 
 .wizard .main{
@@ -31,4 +33,33 @@
     margin-left: 10px;
     font-size: 16px;
     color: var(--text);
+}
+
+.pill{
+    height: 30px;
+    width: auto;
+    float: right;
+    border: 2px solid var(--green);
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pill:hover{
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.pill-active{
+    height: 30px;
+    width: auto;
+    float: right;
+    background-color: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }

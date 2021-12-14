@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Schedule() {
     return(
         <>
@@ -57,7 +59,7 @@ function Schedule() {
                         14-10-2021 - 22-10-2021
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Create</button>
+                        <Link to="/schedule/create" ><button className="custom-btn background-green">Create</button></Link>
                     </div>
                 </div>
 

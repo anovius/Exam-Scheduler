@@ -4,6 +4,111 @@ import logo from "../../../assets/logo-dark.png";
 
 function Create(){
     const [stepNumber, setStepNumber] = useState(0);
+    var subjects = [
+        {
+            name: "PF",
+            isSelected: false
+        },
+        {
+            name: "COAL",
+            isSelected: false
+        },
+        {
+            name: "OOP",
+            isSelected: false
+        },
+        {
+            name: "DSA",
+            isSelected: false
+        },
+        {
+            name: "DBMS",
+            isSelected: false
+        },
+        {
+            name: "OS",
+            isSelected: false
+        },
+        {
+            name: "SP",
+            isSelected: false
+        },
+        {
+            name: "CA",
+            isSelected: false
+        },
+        {
+            name: "AOA",
+            isSelected: false
+        },
+        {
+            name: "TOA",
+            isSelected: false
+        },
+        {
+            name: "Compiler",
+            isSelected: false
+        },
+        {
+            name: "PM",
+            isSelected: false
+        },
+        {
+            name: "TBW",
+            isSelected: false
+        },
+
+    ];
+
+    const [subjectsSelected, setSubjectsSelected] = useState(subjects);
+
+    const handleSubjectClick = (index) => {
+        setSubjectsSelected(
+            subjectsSelected.map((subject, i) => 
+                i === index ? {...subject, isSelected: !subject.isSelected} : subject
+            )
+        );
+    }
+
+    var teachers = [
+        {
+            name: "Abc",
+            isSelected: false
+        },
+        {
+            name: "Lorem",
+            isSelected: false
+        },
+        {
+            name: "Ipsum",
+            isSelected: false
+        },
+        {
+            name: "Xyz",
+            isSelected: false
+        },
+        {
+            name: "JKL",
+            isSelected: false
+        },{
+            name: "Abc",
+            isSelected: false
+        },
+        {
+            name: "Lorem",
+            isSelected: false
+        },
+    ];
+
+    const [teachersSelected, setTeachersSelected] = useState(teachers);
+
+    const handleTeacherClick = (index) => {
+        setTeachersSelected(
+            teachersSelected.map((teacher, i) => 
+                i === index ? {...teacher, isSelected: !teacher.isSelected} : teacher
+            )
+        );
+    }
 
     return(
         <>
@@ -11,24 +116,60 @@ function Create(){
                 <div className="col-md-6 col-12 wizard box-shadow d-flex">
                     <div className="main col-md-8">
                         <img src={logo} alt="logo" className="logo"/>
-                        <h3 className="ms-4 mb-4">Schedule Details</h3>
                         <form>
-                            <div class="row mx-0 mb-3">
-                            <div class="col">
-                                <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="e.g. Mid Term Fall 19"/>
-                            </div>
-                            </div>
-                            <div class="row mx-0">
-                                <div class="col">
-                                    <label class="form-label">Starting Date</label>
-                                    <input type="text" class="form-control"/>
+                            { stepNumber === 0 && <div>
+                                <h3 className="ms-4 mb-4">Schedule Details</h3>
+                                <div class="row mx-0 mb-3">
+                                    <div class="col">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" class="form-control" placeholder="e.g. Mid Term Fall 19"/>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <label class="form-label">Ending Date</label>
-                                    <input type="text" class="form-control"/>
+                                <div class="row mx-0">
+                                    <div class="col">
+                                        <label class="form-label">Starting Date</label>
+                                        <input type="text" class="form-control"/>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Ending Date</label>
+                                        <input type="text" class="form-control"/>
+                                    </div>
                                 </div>
-                            </div>
+                            </div> }
+
+                            { stepNumber === 1 && <div>
+                                <h3 className="ms-4 mb-4">Subjects</h3>
+                                <div className="row mx-0">
+                                    { subjectsSelected.map((subject, index) => 
+                                            <div className={subject.isSelected? 'pill-active': 'pill'} onClick={() => handleSubjectClick(index)}>
+                                                {subject.name}
+                                            </div>
+                                        )}
+                                </div>
+                            </div> }
+
+                            { stepNumber === 2 && <div>
+                                <h3 className="ms-4 mb-4">Teachers & Faculty</h3>
+                                <div className="row mx-0">
+                                    { teachersSelected.map((teacher, index) => 
+                                            <div className={teacher.isSelected? 'pill-active': 'pill'} onClick={() => handleTeacherClick(index)}>
+                                                {teacher.name}
+                                            </div>
+                                        )}
+                                </div>
+                            </div> }
+
+                            { stepNumber === 3 && <div>
+                                <h3 className="ms-4 mb-4">Rooms & Slots</h3>
+                                <div className="row mx-0">
+                                    { teachersSelected.map((teacher, index) => 
+                                            <div className={teacher.isSelected? 'pill-active': 'pill'} onClick={() => handleTeacherClick(index)}>
+                                                {teacher.name}
+                                            </div>
+                                        )}
+                                </div>
+                            </div> }
+                            
                         </form>
                     </div>
                     <div className="col-md-4">
