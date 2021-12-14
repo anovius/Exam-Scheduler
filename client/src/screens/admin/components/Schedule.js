@@ -143,9 +143,11 @@ function Schedule() {
                         <button className="custom-btn background-blue">Next</button>
                     </div>
                 </div>
-                <div className="edit-float">
-                    <i class="fas fa-edit"></i>
-                </div>
+                <Link to="/schedule">
+                    <div className="edit-float">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                </Link>
             </div>
         </>
     );
