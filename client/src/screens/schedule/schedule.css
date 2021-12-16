@@ -44,6 +44,7 @@
     margin: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    user-select: none;
 }
 
 .pill:hover{
@@ -62,4 +63,23 @@
     margin: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.priority{
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -250px;
+    background-color: var(--white);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-container input[type = 'date']{
+    width: 155px;
 }

@@ -220,7 +220,6 @@ hr{
 .center-container{
     margin-top: 80px;
     width: 100%;
-    background-color: var(--shadow);
     display: flex;
     justify-content: center;
     align-items: center;

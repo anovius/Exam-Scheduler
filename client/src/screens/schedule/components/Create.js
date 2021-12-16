@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "../../../assets/logo-dark.png";
 
@@ -110,8 +111,19 @@ function Create(){
         );
     }
 
+    const [priorityShow, setPriorityShow] = useState(false);
+
     return(
         <>
+            { priorityShow && <div className="priority box-shadow">
+                <div className="col-md-10 mt-3">
+                    <h4 className="text-center">Select Priority</h4>
+                    <input type="range" class="form-range" min="1" max="6"></input>
+                    <div className="d-flex flex-row-reverse mt-5">
+                        <button className="custom-btn background-blue" onClick={() => setPriorityShow(false)}>Set</button>
+                    </div>
+                </div>
+            </div>}
             <div className="schedule-container">
                 <div className="col-md-6 col-12 wizard box-shadow d-flex">
                     <div className="main col-md-8">
@@ -128,20 +140,20 @@ function Create(){
                                 <div class="row mx-0">
                                     <div class="col">
                                         <label class="form-label">Starting Date</label>
-                                        <input type="text" class="form-control"/>
+                                        <input type="date" class="form-control"/>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Ending Date</label>
-                                        <input type="text" class="form-control"/>
+                                        <input type="date" class="form-control"/>
                                     </div>
                                 </div>
                             </div> }
 
                             { stepNumber === 1 && <div>
                                 <h3 className="ms-4 mb-4">Subjects</h3>
-                                <div className="row mx-0">
+                                <div className="row mx-0" id="subject">
                                     { subjectsSelected.map((subject, index) => 
-                                            <div className={subject.isSelected? 'pill-active': 'pill'} onClick={() => handleSubjectClick(index)}>
+                                            <div className={subject.isSelected? 'pill-active': 'pill'} onClick={() => handleSubjectClick(index)} onDoubleClick={()=> setPriorityShow(true)}>
                                                 {subject.name}
                                             </div>
                                         )}
@@ -178,7 +190,7 @@ function Create(){
                     <div className="navigation">
                         { stepNumber !== 0 && <button className="custom-btn me-3 text-black-50" onClick={() => setStepNumber(stepNumber - 1)}>Previous</button>}
                         { stepNumber !== 3 && <button className="custom-btn background-blue" onClick={() => setStepNumber(stepNumber + 1)} >Next</button>}
-                        { stepNumber === 3 && <button className="custom-btn background-blue" onClick={() => setStepNumber(stepNumber + 1)} >Finish</button>}
+                        { stepNumber === 3 && <Link to="/admin"><button className="custom-btn background-blue">Finish</button></Link>}
                     </div>
                 </div>
             </div>
