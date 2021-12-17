@@ -258,7 +258,7 @@ hr{
 }
 
 
-tr, th, td, .col, thead, tbody{
+.table-container tr, .table-container th, .table-container td, .table-container .col, .table-container thead, .table-container tbody{
     border: none !important;
 }
 
