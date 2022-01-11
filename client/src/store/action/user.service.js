@@ -1,7 +1,8 @@
 import ApiService from "./api.service";
+const apiService = new ApiService();
 
 export default class UserService{
-    async login(body){
-        return ApiService.post('/user/login', body);
+    login(body){
+        return apiService.post('/user/login', body);
     }
 }
