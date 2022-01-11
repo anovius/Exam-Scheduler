@@ -3,6 +3,7 @@ let uniqueValidator = require("mongoose-unique-validator");
 let crypto = require("crypto");
 let jwt = require("jsonwebtoken");
 const mongoosePaginate = require("mongoose-paginate-v2");
+let secret = require('../config').secret;
 
 let UserSchema = new mongoose.Schema(
   {
@@ -106,7 +107,7 @@ UserSchema.methods.generateJWT = function () {
       email: this.email,
       // exp: parseInt(exp.getTime() / 1000),
     },
-    "askdnaskdnaskd",
+    secret,
     { expiresIn: "60d" },
   );
 };
@@ -124,7 +125,7 @@ UserSchema.methods.toJSON = function () {
 
 UserSchema.methods.toAuthJSON = function () {
   return {
-    token: this.generateJWT(),
+    token: this.generateJWT();
     email: this.email,
     fullName: this.email,
     userName: this.userName,
