@@ -3,15 +3,15 @@ import { environment } from "../../environment";
 
 export default class ApiService {
   
-    get(url, params = {}){
-      return axios.get(environment.api_url + url, params);
+    async get(url, params = {}){
+      return await axios.get(environment.api_url + url, params);
     }
 
-    post(url, body = {}){
-        return axios.post(environment.api_url + url, body);
+    async post(url, body = {}){
+        return await axios.post(environment.api_url + url, body);
     }
 
-    put(url, body = {}){
-        return axios.put(environment.api_url + url, body);
+    async put(url, body = {}){
+        return await axios.put(environment.api_url + url, body);
     }
 }
