@@ -13,12 +13,9 @@ let http = require('http'),
 let isProduction = process.env.NODE_ENV === 'production';
 module.exports = (app) => {
   var allowedOrigins = [
-    "http://localhost:4200",
-    "http://localhost:4300",
     "http://localhost:3000",
-    "https://smartup.dk/",
-    "https://smartup.dk",
   ];
+  
   app.use(
     cors({
       credentials: true,
@@ -78,7 +75,7 @@ module.exports = (app) => {
     mongoose.set('debug', true);
   }
 
-
+  require('./models/User');
   // require('./utilities/passport');
 
 
