@@ -15,7 +15,7 @@ const {
   sendEmailForgotPasswordSuccess,
 } = require("../../utilities/emailService");
 
-router.post("/users/login", (req, res, next) => {
+router.post("/login", (req, res, next) => {
     passport.authenticate(
       "local",
       { session: false },
@@ -42,7 +42,7 @@ router.post("/users/login", (req, res, next) => {
     )(req, res, next);
 });
 
-router.get("/user/context", auth.required, auth.user, (req, res, next) => {
+router.get("/context", auth.required, auth.user, (req, res, next) => {
     let user = req.user;
     next(new OkResponse({ user: user.toAuthJSON() }));
 });

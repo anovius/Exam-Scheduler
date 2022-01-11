@@ -41,10 +41,11 @@ let UserSchema = new mongoose.Schema(
 
     role: {
       type: Number,
-      default: 2, // default 2- User
+      default: 3, // default 2- Student
       enum: [
         1, // 1: Admin
-        2, // 2: User
+        2, // 2: Faculty
+        3, //Student
       ],
     },
 
