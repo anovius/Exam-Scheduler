@@ -10,7 +10,7 @@ export const userSlice = createSlice({
       state.value += 1;
     },
     login: (state, action) => {
-     //TODO
+     state.value = action.user;
     },
   },
 })
