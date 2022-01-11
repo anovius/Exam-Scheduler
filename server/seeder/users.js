@@ -15,6 +15,7 @@ async function seedUsers() {
       status: 0,
     }
   );
+  student.setPassword("Asdf123");
   await student.save();
 
   let faculty = new User(
@@ -26,6 +27,7 @@ async function seedUsers() {
       status: 0,
     }
   );
+  faculty.setPassword("Asdf123");
   await faculty.save();
 
   let admin = new User(
@@ -37,6 +39,7 @@ async function seedUsers() {
       status: 0,
     }
   );
+  admin.setPassword("Asdf123");
   await admin.save();
 
   console.log("Users seeded");
