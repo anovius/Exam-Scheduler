@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import {logout, login} from '../../../store/reducer/userSlice';
 import logo from '../../../assets/logo-light.png';
 import UserService from '../../../store/action/user.service';
 const userService = new UserService();
 
+
 function Login(){
     const [username, setUsername] = useState(""); 
     const [password, setPassword] = useState("");
-    
+    const dispatch = useDispatch();
     function login(){
         userService.login(
             {
@@ -18,11 +21,11 @@ function Login(){
             }
         ).then(
             res => {
-                console.log(res);
+                
             }
         ).catch(
             err => {
-                console.log(err);
+                
             }
         )
     }
