@@ -6,10 +6,6 @@ require("dotenv").config();
 // Create global app object
 let app = express();
 
-var allowedOrigins = [
-  "http://localhost:3000",
-];
-
 require("./server/app-config")(app);
 
 
