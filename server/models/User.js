@@ -125,7 +125,7 @@ UserSchema.methods.toJSON = function () {
 
 UserSchema.methods.toAuthJSON = function () {
   return {
-    token: this.generateJWT();
+    token: this.generateJWT(),
     email: this.email,
     fullName: this.email,
     userName: this.userName,
