@@ -21,6 +21,7 @@ function Login(){
         }
         UserService.login(body).then(res => {
             const {user} = res.data.data;
+            localStorage.setItem('token', user.token);
             login(user);
         }).catch(err => {
             setHasErrors(true);

@@ -6,6 +6,10 @@ import { useUserContext } from '../../store/UserStore';
 
 function Header(props){
     const {user, logout} = useUserContext();
+    function purgeAuth(){
+        window.localStorage.removeItem('token');
+        logout();
+    }
     return (
         <>
             <div className="header box-shadow">
@@ -20,7 +24,7 @@ function Header(props){
                         </div>
                         <div class="dropdown-menu me-4" aria-labelledby="dropdownMenuButton">
                             <Link to={props.link} class="dropdown-item"> <i class="fas fa-cogs me-2"></i> Settings</Link>
-                            <button onClick={logout} className=' ms-2'> <i class="fas fa-sign-out-alt"></i> Logout</button>
+                            <button onClick={purgeAuth} className=' ms-2'> <i class="fas fa-sign-out-alt"></i> Logout</button>
                         </div>
                     </div>
                     </div>

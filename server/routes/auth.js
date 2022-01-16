@@ -24,7 +24,7 @@ const user = (req, res, next) => {
 }
 const admin = (req, res, next) => {
   User.findById(req.payload.id).then(function(user){
-    if(!user && (user.role !== 2 || user.role !== 3)){
+    if(!user && user.role !== 1){
        next(new UnauthorizedResponse ());
        }
     req.user = user;
