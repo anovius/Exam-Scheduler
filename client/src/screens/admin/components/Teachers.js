@@ -6,7 +6,7 @@ function Teachers() {
             <div className="col-md-11 table-container box-shadow" align="center">
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className="schedule-title m-2">
-                        Teachers
+                        Teachers & Faculty
                     </div>
                     <div>
                     <Link to="/admin/teachers/add">

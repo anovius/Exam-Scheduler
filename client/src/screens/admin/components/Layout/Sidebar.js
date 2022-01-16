@@ -26,7 +26,6 @@ function Sidebar(){
                         <NavLink to='/admin/classes' activeClassName='active'> <i className="fas fa-users-class"></i> Classes</NavLink>
                         <NavLink to='/admin/students' activeClassName='active'> <i className="fas fa-users"></i> Students</NavLink>
                         <NavLink to='/admin/teachers' activeClassName='active'> <i className="fas fa-chalkboard-teacher"></i> Teachers</NavLink>
-                        <NavLink to='/admin/faculty' activeClassName='active'> <i className="fas fa-user-friends"></i> Faculty</NavLink>
                         <NavLink to='/admin/others' activeClassName='active'> <i className="fas fa-coins"></i> Others</NavLink>
                     </div>
 

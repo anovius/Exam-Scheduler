@@ -81,4 +81,40 @@ router.get("/get/students", auth.required, auth.admin, (req, res, next) => {
   });
 });
 
+router.post("/add/teacher", auth.required, auth.admin, (req, res, next) => {
+  let user = new User({
+    fullName: req.body.fullName,
+    email: req.body.email,
+    userName: req.body.userName,
+  });
+  user.setPassword(req.body.userName);
+  user.role = 2;
+  user.save((err, result) => {
+      if (err || !result) {
+          next(new BadRequestResponse(err));
+      }
+      next(new OkResponse({ message: "User created successfully" }));
+  });
+});
+
+router.get("/get/teachers", auth.required, auth.admin, (req, res, next) => {
+const options = {
+  page: req.query.page || 1,
+  limit: req.query.limit || 10,
+  sort: { createdAt: -1 },
+}
+
+let query = {
+  role: 2,
+  status: 1,
+};
+
+User.paginate(query, options, (err, result) => {
+  if (err) {
+    next(new BadRequestResponse(err));
+  }
+  next(new OkResponse(result));
+});
+});
+
 module.exports = router;
