@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 import { Link } from "react-router-dom";
 import ClassService from "../../../store/action/class.service";
 
@@ -14,6 +15,29 @@ function Classes() {
         ClassService.getAll().then(res => {
             setClasses(res.data.data.docs);
         });
+    }
+
+    function deleteClass(slug){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Are you sure to delete this class!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              ClassService.changeStatus(slug, 2).then(res => {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+                getClasses();
+              });
+            }
+          })
     }
     
     return(
@@ -45,7 +69,7 @@ function Classes() {
                         <td>{c.degree}</td>
                         <td>{c.year}</td>
                         <td>{c.section}</td>
-                        <td><i class="fas fa-trash-alt"></i></td>
+                        <td class="pointer"><i class="fas fa-trash-alt" onClick={()=> deleteClass(c.slug)}></i></td>
                     </tr>
                 )}
                 </tbody>

@@ -20,6 +20,10 @@ const ClassSchema = new mongoose.Schema({
     section: {
         type: String,
         required: true,
+    },
+    status: {
+        type: Number,
+        default: 1 // 1-Active 2-Deleted 
     }
 });
 

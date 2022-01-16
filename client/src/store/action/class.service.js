@@ -7,6 +7,10 @@ const ClassService = {
 
     getAll: () => {
         return http.get('/class/get/all');
+    },
+
+    changeStatus: (slug, status) => {
+        return http.put(`/class/status/${status}/${slug}`);
     }
 }
 

@@ -23,9 +23,7 @@ router.post("/login", (req, res, next) => {
         if (err) {
           next(new BadRequestResponse(err.message));
         }
-        if (user && user.status === 3) {
-          next(new UnauthorizedResponse("Your email is not approved", 402));
-        } else if (user && user.status === 2) {
+        if (user && user.status === 2) {
           next(
             new UnauthorizedResponse(
               "Your Account is Blocked!, Contact to Support please",
