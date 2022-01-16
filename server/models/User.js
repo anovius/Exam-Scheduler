@@ -1,11 +1,11 @@
-let mongoose = require("mongoose");
-let uniqueValidator = require("mongoose-unique-validator");
-let crypto = require("crypto");
-let jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
+const crypto = require("crypto");
+const jwt = require("jsonwebtoken");
 const mongoosePaginate = require("mongoose-paginate-v2");
-let secret = require('../config').secret;
+const secret = require('../config').secret;
 
-let UserSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     email: {
       type: String,
