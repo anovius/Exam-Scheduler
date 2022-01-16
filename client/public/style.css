@@ -190,6 +190,8 @@ hr{
 .user-icon{
     height: 30px;
     width: 30px;
+    border: 2px solid var(--text);
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -207,24 +209,21 @@ hr{
     width: 20px;
 }
 
-.dropdown-item{
+.dropdown-item, .dropdown-menu button{
     cursor: pointer;
+    width: 100%;
+    text-align: left;
     color: var(--text);
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover, .dropdown-menu button:hover{
     background-color: var(--green);
     color: var(--white);
 }
 
-.row .col{
-    background-color: var(--shadow);
-}
-
 .center-container{
+    margin-top: 80px;
     width: 100%;
-    height: 100%;
-    background-color: var(--shadow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,7 +262,7 @@ hr{
 }
 
 
-tr, th, td, .col, thead, tbody{
+.table-container tr, .table-container th, .table-container td, .table-container .col, .table-container thead, .table-container tbody{
     border: none !important;
 }
 
@@ -495,4 +494,28 @@ select:focus{
     font-size: 16px;
     font-weight: 500;
     color: var(--white);
+}
+
+
+.error{
+    color: #F69A45;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--text);
+}
+
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }

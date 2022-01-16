@@ -1,3 +1,12 @@
+button {
+  /* RESET */
+  background: none;
+  border: none;
+  color: inherit;
+  line-height: normal;
+  overflow: visible;
+
+}
 
 .profile-pic {
     position: relative;
@@ -54,4 +63,35 @@
     border-radius: 5px;
     background-color: #fafafa;
     cursor: pointer;
+  }
+
+  .notification{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .notification .notification-icon{
+    float: left;
+    font-size: 40px;
+    color: var(--heading);
+  }
+
+  .notification .close-icon{
+    position: relative;
+    right: 0px;
+    font-size: 20px;
+    color: rgb(175, 92, 92);
+    margin-left: 20px;
+  }
+
+  .notification .text{
+    float: left;
+    margin-left: 35px;
+    margin-top: 10px;
+    color: var(--text);
   }

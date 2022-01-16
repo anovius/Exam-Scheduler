@@ -1,6 +1,45 @@
+import { useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 import { Link } from "react-router-dom";
+import ClassService from "../../../store/action/class.service";
 
 function Classes() {
+
+    const [classes, setClasses] = useState([]);
+
+    useEffect(() => {
+        getClasses();
+    }, []);
+
+    function getClasses(){
+        ClassService.getAll().then(res => {
+            setClasses(res.data.data.docs);
+        });
+    }
+
+    function deleteClass(slug){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Are you sure to delete this class!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              ClassService.changeStatus(slug, 2).then(res => {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+                getClasses();
+              });
+            }
+          })
+    }
+    
     return(
         <>
            <div className="col-md-11 table-container box-shadow" align="center">
@@ -21,46 +60,18 @@ function Classes() {
                         <th scope="col">Degree</th>
                         <th scope="col">Year</th>
                         <th scope="col">Section</th>
-                        <th scope="col">Strength</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                {classes.map((c, i) =>
                     <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
+                        <td>{c.degree}</td>
+                        <td>{c.year}</td>
+                        <td>{c.section}</td>
+                        <td class="pointer"><i class="fas fa-trash-alt" onClick={()=> deleteClass(c.slug)}></i></td>
                     </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
+                )}
                 </tbody>
                 </table>
                 </div>

@@ -1,12 +1,30 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { environment } from "../../../environment";
+import UserService from "../../../store/action/user.service";
+
 function Teachers() {
+
+    const [teachers, setTeachers] = useState([]);
+
+    function getTeachers(){
+        UserService.getTeachers().then(res => {
+            setTeachers(res.data.data.docs);
+        });
+    }
+
+    useEffect(() => {
+        getTeachers();
+    }, []);
+
+
     return(
         <>
             
             <div className="col-md-11 table-container box-shadow" align="center">
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className="schedule-title m-2">
-                        Teachers
+                        Teachers & Faculty
                     </div>
                     <div>
                     <Link to="/admin/teachers/add">
@@ -18,62 +36,26 @@ function Teachers() {
                   <table className="table">
                     <thead className="box-shadow-bottom">
                     <tr>
+                        <th></th>
                         <th scope="col">Teacher Name</th>
+                        <th scope="col">User Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">Availability</th>
                     </tr>
                 </thead>
                 <tbody>
+                {teachers.map((teacher, i) =>
                     <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-danger">Not Available</td>
+                        <td>
+                            <div className="profile-img">
+                                <img src={environment.file_url+teacher.img} alt="user"/>
+                            </div>
+                        </td>
+                        <td>{teacher.fullName}</td>
+                        <td>{teacher.userName}</td>
+                        <td>{teacher.email}</td>
+                    <td></td>
                     </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-success">Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-danger">Not Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-success">Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-success">Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-danger">Not Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amteen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-success">Available</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Sir Abdul Mateen</td>
-                        <td>amateen@pucit.edu.pk</td>
-                        <td>+92345678910</td>
-                        <td className="color-danger">Not Available</td>
-                    </tr>
-                    
+                )}
                 </tbody>
                 </table>
                 </div>

@@ -1,5 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { environment } from "../../../environment";
+import UserService from "../../../store/action/user.service";
 function Students() {
+
+    const [students, setStudents] = useState([]);
+
+    function getStudents(){
+        UserService.getStudents().then(res => {
+            setStudents(res.data.data.docs);
+        });
+    }
+
+    useEffect(() => {
+        getStudents();
+    }, []);
+
     return(
         <>
             <div className="col-md-11 table-container box-shadow" align="center">
@@ -17,61 +33,27 @@ function Students() {
                   <table className="table">
                     <thead className="box-shadow-bottom">
                     <tr>
+                        <th></th>
                         <th scope="col">Name</th>
-                        <th scope="col">Degree</th>
-                        <th scope="col">Section</th>
-                        <th scope="col">Year</th>
+                        <th scope="col">Roll No</th>
+                        <th scope="col">Email</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr> 
-                    <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
-                     <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
-                     <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr> 
-                    <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
-                     <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
-                     <tr className="table-data">
-                        <td>Saad Ali Khan</td>
-                        <td>Computer Science</td>
-                        <td>Afternoon</td>
-                        <td>2018</td>
-                    </tr>
+                    {students.map((student, i) =>
+                        <tr className="table-data">
+                            <td>
+                                <div className="profile-img">
+                                    <img src={environment.file_url+student.img} alt="user"/>
+                                </div>
+                            </td>
+                            <td>{student.fullName}</td>
+                            <td>{student.userName}</td>
+                            <td>{student.email}</td>
+                        <td></td>
+                        </tr>
+                    )}
                 </tbody>
                 </table>
                 </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Schedule() {
     return(
         <>
@@ -57,7 +59,7 @@ function Schedule() {
                         14-10-2021 - 22-10-2021
                     </div>
                     <div>
-                        <button className="custom-btn background-green">Create</button>
+                        <Link to="/schedule/create" ><button className="custom-btn background-green">Create</button></Link>
                     </div>
                 </div>
 
@@ -141,9 +143,11 @@ function Schedule() {
                         <button className="custom-btn background-blue">Next</button>
                     </div>
                 </div>
-                <div className="edit-float">
-                    <i class="fas fa-edit"></i>
-                </div>
+                <Link to="/schedule">
+                    <div className="edit-float">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                </Link>
             </div>
         </>
     );
