@@ -1,7 +1,7 @@
 import http from "./api.service";
 
 const UserService = {
-    login : function(body){
+    login : (body) => {
         return http.post('/user/login', body);
     }
 }

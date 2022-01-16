@@ -9,7 +9,15 @@ const ClassSchema = new mongoose.Schema({
         unique:true,
         required:true
     },
-    name: {
+    degree: {
+        type: String,
+        required: true,
+    },
+    year: {
+        type: String,
+        required: true,
+    },
+    section: {
         type: String,
         required: true,
     }
@@ -32,7 +40,9 @@ ClassSchema.methods.slugify = function () {
 ClassSchema.methods.toJSON = function () {
     return {
         slug: this.slug,
-        name: this.name,
+        degree: this.degree,
+        year: this.year,
+        section: this.section,
     }
 }
 
