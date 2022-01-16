@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2'
 import { environment } from "../../../environment";
 import UserService from "../../../store/action/user.service";
 function Students() {
@@ -10,7 +9,6 @@ function Students() {
     function getStudents(){
         UserService.getStudents().then(res => {
             setStudents(res.data.data.docs);
-            console.log(res.data.data.docs);
         });
     }
 
