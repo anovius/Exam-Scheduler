@@ -11,6 +11,7 @@ async function seedUsers() {
       fullName: "Student",
       userName: "student",
       email: "student@gmail.com",
+      img: "uploads/no_user_img.png",
       role: 3,
       status: 0,
     }
@@ -22,7 +23,8 @@ async function seedUsers() {
     {
       fullName: "Faculty",
       userName: "teacher",
-      email: "faculty@gmail.com",
+      email: "teacher@gmail.com",
+      img: "uploads/no_user_img.png",
       role: 2,
       status: 0,
     }
@@ -35,6 +37,7 @@ async function seedUsers() {
       fullName: "Admin",
       userName: "admin",
       email: "admin@gmail.com",
+      img: "uploads/no_user_img.png",
       role: 1,
       status: 0,
     }

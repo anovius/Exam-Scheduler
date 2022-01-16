@@ -190,6 +190,8 @@ hr{
 .user-icon{
     height: 30px;
     width: 30px;
+    border: 2px solid var(--text);
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -207,12 +209,14 @@ hr{
     width: 20px;
 }
 
-.dropdown-item{
+.dropdown-item, .dropdown-menu button{
     cursor: pointer;
+    width: 100%;
+    text-align: left;
     color: var(--text);
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover, .dropdown-menu button:hover{
     background-color: var(--green);
     color: var(--white);
 }

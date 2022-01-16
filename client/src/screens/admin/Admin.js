@@ -24,7 +24,6 @@ function Admin() {
                 <Route exact path="/admin/faculty" component = {Faculty} />
                 <Route exact path="/admin/others" component = {Others} />
                 <Route exact path="/admin/notifications" component = {Notifications} />
-                <Route exact path="/admin/settings" component = {Settings} />
                 <Route exact path="/admin/classes/add" component = {AddClass} />
                 <Route exact path="/admin/students/add" component = {AddStudent} />
                 <Route exact path="/admin/teachers/add" component = {AddTeacher} />

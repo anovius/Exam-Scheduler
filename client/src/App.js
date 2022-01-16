@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import { Auth, Admin, Student, Teacher, Schedule } from './screens'
+import { Settings } from "./screens/shared";
 import {useUserContext} from './store/UserStore';
 
 
 const userAllowedMap = {
-  1: ['/admin',  '/schedule'],
-  2: ['/teacher'],
-  3: ['/student']
+  1: ['/admin',  '/schedule', 'settings'],
+  2: ['/teacher', 'settings'],
+  3: ['/student', 'settings']
 }
  
 
@@ -47,6 +48,7 @@ function App() {
           <PrivateRoute path="/student" component={Student}/>
           <PrivateRoute path="/teacher" component={Teacher}/>
           <PrivateRoute path="/schedule" component={Schedule}/>
+          <PrivateRoute path="/settings" component={Settings}/>
        
         </Switch>
       </Router>

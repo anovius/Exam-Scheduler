@@ -11,10 +11,7 @@ let UserSchema = new mongoose.Schema(
       type: String,
       lowercase: true,
       required: true,
-      trim: true,
-      index: true,
       unique: true,
-      sparse: true,
     },
     fullName: {
       type: String,
@@ -25,11 +22,7 @@ let UserSchema = new mongoose.Schema(
     userName: {
       type: String,
       unique: true,
-      sparse: true,
-      index: true,
       required: true,
-      minLength: 3,
-      trim: true,
     },
 
     img: { type: String, default: "" },
