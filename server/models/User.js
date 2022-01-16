@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
 
-    img: { type: String, default: "" },
+    img: { type: String, default: "uploads/no_user_img.png" },
 
     otp: { type: String, default: null },
     otpExpires: { type: Date, default: null },
