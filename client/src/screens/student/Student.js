@@ -18,6 +18,7 @@ function Student(){
                 <Route exact path="/student" component = {Schedule} />
                 <Route exact path="/student/complaints" component = {Complaints} />
                 <Route exact path="/student/notifications" component = {Notifications} />
+                <Route exact path="/student/settings" component = {Settings} />
                 <Route exact path="/student/complaints/add" component = {AddComplaint} />
 
               </Switch>
