@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ClassService from "../../../store/action/class.service";
 
 function Classes() {
+
+    const [classes, setClasses] = useState([]);
+
+    useEffect(() => {
+        getClasses();
+    }, []);
+
+    function getClasses(){
+        ClassService.getAll().then(res => {
+            setClasses(res.data.data.docs);
+        });
+    }
+    
     return(
         <>
            <div className="col-md-11 table-container box-shadow" align="center">
@@ -21,46 +36,18 @@ function Classes() {
                         <th scope="col">Degree</th>
                         <th scope="col">Year</th>
                         <th scope="col">Section</th>
-                        <th scope="col">Strength</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                {classes.map((c, i) =>
                     <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
+                        <td>{c.degree}</td>
+                        <td>{c.year}</td>
+                        <td>{c.section}</td>
+                        <td><i class="fas fa-trash-alt"></i></td>
                     </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>Computer Science</td>
-                        <td>Fall 2018</td>
-                        <td>Afternoon</td>
-                        <td>40</td>
-                    </tr>
+                )}
                 </tbody>
                 </table>
                 </div>
