@@ -7,6 +7,10 @@ const UserService = {
 
     createStudent: (body) => {
         return http.post('/user/add/student', body);
+    },
+
+    getStudents: () => {
+        return http.get('/user/get/students');
     }
 }
 

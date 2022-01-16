@@ -109,7 +109,7 @@ UserSchema.methods.generateJWT = function () {
 UserSchema.methods.toJSON = function () {
   return {
       email: this.email,
-      fullName: this.email,
+      fullName: this.fullName,
       userName: this.userName,
       img: this.img,
       role: this.role,
