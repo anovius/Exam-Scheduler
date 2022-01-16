@@ -7,7 +7,7 @@ import './admin.css';
 function Admin() {
   return (
     <>
-      <Header />
+      <Header link="/admin/settings"/>
       <div className="container-fluid">
         <div className="row">
           <div className="sidebar box-shadow">

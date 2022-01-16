@@ -6,26 +6,26 @@ import { Notifications, Settings, Header } from '../shared';
 function Student(){
     return(
         <>
-            <Header />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="sidebar box-shadow">
-            <Sidebar />
-          </div>
-          <div className="col">
-            <div className="center-container">
-              <Switch>
-                <Route exact path="/student" component = {Schedule} />
-                <Route exact path="/student/complaints" component = {Complaints} />
-                <Route exact path="/student/notifications" component = {Notifications} />
-                <Route exact path="/student/settings" component = {Settings} />
-                <Route exact path="/student/complaints/add" component = {AddComplaint} />
+          <Header link="/student/settings"/>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="sidebar box-shadow">
+                <Sidebar />
+              </div>
+              <div className="col">
+                <div className="center-container">
+                  <Switch>
+                    <Route exact path="/student" component = {Schedule} />
+                    <Route exact path="/student/complaints" component = {Complaints} />
+                    <Route exact path="/student/notifications" component = {Notifications} />
+                    <Route exact path="/student/settings" component = {Settings} />
+                    <Route exact path="/student/complaints/add" component = {AddComplaint} />
 
-              </Switch>
+                  </Switch>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
-      </div>
+          </div>
         </>
     );
 }
