@@ -495,3 +495,10 @@ select:focus{
     font-weight: 500;
     color: var(--white);
 }
+
+
+.error{
+    color: #F69A45;
+    font-size: 14px;
+    margin-top: 10px;
+}

@@ -10,6 +10,8 @@ function Login(){
     const [password, setPassword] = useState("");
     const { login } = useUserContext();
 
+    const [hasErrors, setHasErrors] = useState(false);
+
     function submitForm(){
         let body = {
             user: {
@@ -20,6 +22,8 @@ function Login(){
         UserService.login(body).then(res => {
             const {user} = res.data.data;
             login(user);
+        }).catch(err => {
+            setHasErrors(true);
         });
     }
     
@@ -40,6 +44,7 @@ function Login(){
                         <Link to='/auth/forget'>Forgot Password ?</Link>
                     </div>
                     <button type="button" className='login-btn' onClick={() => submitForm()} >Login</button>
+                    { hasErrors && <p className='error'>Invalid username or password!</p>}
                 </form>
             </div>
         </>
