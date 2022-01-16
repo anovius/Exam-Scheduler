@@ -1,33 +1,26 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import {logout, login} from '../../../store/reducer/userSlice';
+import { Link,  } from 'react-router-dom';
 import logo from '../../../assets/logo-light.png';
 import UserService from '../../../store/action/user.service';
-const userService = new UserService();
+import {useUserContext} from '../../../store/UserStore';
 
 
 function Login(){
     const [username, setUsername] = useState(""); 
     const [password, setPassword] = useState("");
-    const dispatch = useDispatch();
-    function login(){
-        userService.login(
-            {
-                user: {
-                    userName: username,
-                    password: password
-                }
+    const { user, login } = useUserContext();
+
+    function submitForm(){
+        let body = {
+            user: {
+                userName: username,
+                password: password
             }
-        ).then(
-            res => {
-                
-            }
-        ).catch(
-            err => {
-                
-            }
-        )
+        }
+        UserService.login(body).then(res => {
+            const {user} = res.data.data;
+            login(user);
+        });
     }
     
     return(
@@ -46,7 +39,7 @@ function Login(){
                     <div className="special">
                         <Link to='/auth/forget'>Forgot Password ?</Link>
                     </div>
-                    <button type="button" className='login-btn' onClick = {() => login()} >Login</button>
+                    <button type="button" className='login-btn' onClick={() => submitForm()} >Login</button>
                 </form>
             </div>
         </>

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import store from './store/store'
-import { Provider } from 'react-redux'
+import { UserProvider } from './store/UserStore'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <UserProvider>
     <App />
-  </Provider>,
+  </UserProvider>,
   document.getElementById('root')
 );
+
 reportWebVitals();

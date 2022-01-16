@@ -1,17 +1,23 @@
 import axios from "axios";
 import { environment } from "../../environment";
+axios.defaults.baseURL = environment.api_url;
 
-export default class ApiService {
-  
-    async get(url, params = {}){
-      return await axios.get(environment.api_url + url, params);
-    }
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.timeout = 10000;
 
-    async post(url, body = {}){
-        return await axios.post(environment.api_url + url, body);
-    }
+export const setAuthToken = (token) => {
+  if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+      delete axios.defaults.headers.common['Authorization']
+  }
+};
 
-    async put(url, body = {}){
-        return await axios.put(environment.api_url + url, body);
-    }
-}
+const http = {
+  get: axios.get,
+  post: axios.post,
+  put: axios.put,
+  delete: axios.delete
+};
+
+export default http;

@@ -1,8 +1,9 @@
-import ApiService from "./api.service";
-const apiService = new ApiService();
+import http from "./api.service";
 
-export default class UserService{
-    login(body){
-        return apiService.post('/user/login', body);
+const UserService = {
+    login : function(body){
+        return http.post('/user/login', body);
     }
 }
+
+export default UserService;
