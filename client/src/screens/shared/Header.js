@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from '../../../../store/UserStore';
-import UserImage from '../../../../assets/user.png';
+import { useUserContext } from '../../store/UserStore';
+import UserImage from '../../assets/user.png';
 
 
 function Header(){

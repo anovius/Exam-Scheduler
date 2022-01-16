@@ -39,7 +39,6 @@ function App() {
           <Route path="/auth" render={() => {
             if (user) {
               const redirectPath = userAllowedMap[user.role][0];
-
               return <Redirect to={redirectPath} />
             }
             return <Auth />

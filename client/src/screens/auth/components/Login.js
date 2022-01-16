@@ -8,7 +8,7 @@ import {useUserContext} from '../../../store/UserStore';
 function Login(){
     const [username, setUsername] = useState(""); 
     const [password, setPassword] = useState("");
-    const { user, login } = useUserContext();
+    const { login } = useUserContext();
 
     function submitForm(){
         let body = {

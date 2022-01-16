@@ -1,5 +1,4 @@
 import Sidebar from "./Layout/Sidebar";
-import Header from "./Layout/Header";
 import Schedule from "./Schedule";
 import Complaints from "./Complaints";
 import Classes from "./Classes";
@@ -13,4 +12,4 @@ import AddTeacher from "./Records/AddTeacher";
 import AddFaculty from "./Records/AddFaculty";
 
 
-export { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass, AddStudent, AddTeacher, AddFaculty, Others };
+export { Sidebar, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass, AddStudent, AddTeacher, AddFaculty, Others };

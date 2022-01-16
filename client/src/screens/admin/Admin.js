@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router';
 
-import { Sidebar, Header, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass, AddStudent, AddTeacher, AddFaculty, Others  } from './components';
-import { Notifications, Settings } from '../shared';
+import { Sidebar, Schedule, Complaints, Classes, Students, Teachers, Faculty, AddClass, AddStudent, AddTeacher, AddFaculty, Others  } from './components';
+import { Notifications, Settings, Header } from '../shared';
 import './admin.css';
 
 function Admin() {

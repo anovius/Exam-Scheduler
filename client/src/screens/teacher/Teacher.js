@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router';
 
-import { Sidebar, Header, Schedule, Complaints } from './components';
-import { Notifications, Settings } from '../shared';
+import { Sidebar, Schedule, Complaints } from './components';
+import { Notifications, Settings, Header } from '../shared';
 
 function Teacher(){
     return(
