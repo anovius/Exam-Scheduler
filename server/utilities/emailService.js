@@ -34,24 +34,23 @@ const sendEmail = (mailDetails) => {
 
 const sendEmailVerificationOTP = async (user) => {
   sendEmail({
-    from: " SMARTUP Notification <verify@SMARTUP.dk>",
+    from: " ",
     to: user.email,
-    subject: "SMARTUP Email Verification",
+    subject: "",
     templateObj: {
       ...user,
-      emailText: `<p>Please verify that your email address is ${user.email} and that you entered it when signing up for SMARTUP.</p>
-       <p>Enter this OTP to complete the Signup.</p>`,
+      emailText: `</p>`,
     },
   });
 };
 
 const sendSimpleEmail = async (details) => {
   sendEmail({
-    from: " SMARTUP Contact <verify@SMARTUP.dk>",
-    to: 'anovius10@gmail.com',
-    subject: "SMARTUP Contact Form",
+    from: "",
+    to: '',
+    subject: "",
     templateObj: {
-      emailText: `Name: ${details.firstName} ${details.lastName} <br/>Email: ${details.email} <br/>Phone Number: ${details.phone} <br/>Message: ${details.message}  `,
+      emailText: ` `,
     },
   });
 }
@@ -59,29 +58,26 @@ const sendSimpleEmail = async (details) => {
 
 const sendEmailVerificationSuccess = async (user) => {
   sendEmail({
-    from: " SMARTUP No/tification <verify@SMARTUP.dk>",
+    from: "",
     to: user.email,
-    subject: "Your Email verified successfully",
+    subject: "",
     templateObj: {
       ...user,
       emailText: `
-      <h1>Welcome to SMARTUP</h1>. <br>
-        you have successfully verified your email address. <br>
-        <i>Let's Play</i>
+     
       `,
     },
   });
 };
 const sendEmailOTP = async (user) => {
   sendEmail({
-    from: " SMARTUP Notification <verify@SMARTUP.dk>",
+    from: " ",
     to: user.email,
-    subject: "OTP Request",
+    subject: "",
     templateObj: {
       ...user,
       emailText: `
-      <p>We received an OTP request on your SMARTUP Account.</p>.
-      <p>Enter this OTP to complete the process.</p>
+      
       `,
     },
   });
@@ -89,14 +85,12 @@ const sendEmailOTP = async (user) => {
 
 const sendEmailForgotPasswordSuccess = async (user) => {
   sendEmail({
-    from: " SMARTUP Notification <verify@SMARTUP.dk>",
+    from: " ",
     to: user.email,
-    subject: "Your Account's password has been reset",
+    subject: "",
     templateObj: {
       ...user,
       emailText: `
-      Your password for the ${user.email} has been reset successfully. <br>
-        <i>Let's Play</i>
       `,
     },
   });
@@ -104,14 +98,13 @@ const sendEmailForgotPasswordSuccess = async (user) => {
 
 const sendEmailCreateAdmin = async (user) => {
   sendEmail({
-    from: " SMARTUP Notification <verify@SMARTUP.dk>",
+    from: "",
     to: user.email,
-    subject: "Your Admin Account is live",
+    subject: "",
     templateObj: {
       ...user,
       emailText: `
-      Congratulations – your account is live and ready for action. You now have access to SMARTUP admin.
-      Your password for the ${user.email} need to be reset. <br>
+      
       `,
     },
   });

@@ -1,11 +1,11 @@
 "use strict";
 module.exports = {
   PORT : 3000,
-  MONGODB_URI : 'mongodb://localhost:27017/SMARTUP',
+  MONGODB_URI : 'mongodb://localhost:27017/EXAM',
   secret : 'secret',
-  host : 'https://smartup.dk',
+  host : '',
   smtpAuth: {
-    user: 'verify@smartup.dk',
-    pass: 'Noraiz.123456'
+    user: '',
+    pass: ''
   },
 };
