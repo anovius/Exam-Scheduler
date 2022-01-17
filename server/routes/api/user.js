@@ -54,6 +54,7 @@ router.post("/add/student", auth.required, auth.admin, (req, res, next) => {
     user.setPassword(req.body.userName);
     user.role = 3;
     user.save((err, result) => {
+      console.log(err);
         if (err || !result) {
             next(new BadRequestResponse(err));
         }

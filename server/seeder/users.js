@@ -13,7 +13,7 @@ async function seedUsers() {
       email: "student@gmail.com",
       img: "uploads/no_user_img.png",
       role: 3,
-      status: 0,
+      status: 1,
     }
   );
   student.setPassword("Asdf123");
@@ -26,7 +26,7 @@ async function seedUsers() {
       email: "teacher@gmail.com",
       img: "uploads/no_user_img.png",
       role: 2,
-      status: 0,
+      status: 1,
     }
   );
   faculty.setPassword("Asdf123");
@@ -39,7 +39,7 @@ async function seedUsers() {
       email: "admin@gmail.com",
       img: "uploads/no_user_img.png",
       role: 1,
-      status: 0,
+      status: 1,
     }
   );
   admin.setPassword("Asdf123");

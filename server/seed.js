@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 
-let con = mongoose.connect('mongodb://localhost:27017/EXAM', {
+let con = mongoose.connect('mongodb://localhost/EXAM?retryWrites=false', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

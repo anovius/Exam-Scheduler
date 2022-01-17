@@ -46,9 +46,9 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       default: 1,
       enum: [
-        0, //Active
-        1, //Blocked
-        2, //Delete
+        1, //Active
+        2, //Blocked
+        3, //Delete
       ],
     },
 
@@ -91,18 +91,17 @@ UserSchema.methods.generatePasswordRestToken = function () {
 };
 
 UserSchema.methods.generateJWT = function () {
-  // let today = new Date();
-  // let exp = new Date(today);
-  // exp.setDate(today.getDate() + 60);
+  let today = new Date();
+  let exp = new Date(today);
+  exp.setDate(today.getDate() + 60);
 
   return jwt.sign(
     {
       id: this._id,
       email: this.email,
-      // exp: parseInt(exp.getTime() / 1000),
+      exp: parseInt(exp.getTime() / 1000),
     },
-    secret,
-    { expiresIn: "60d" },
+    secret
   );
 };
 

@@ -13,7 +13,7 @@ function getTokenFromHeader(req){
   return null;
 }
 const user = (req, res, next) => {
-  User.findById(req.payload.id).then(function(user){
+  User.findOne({email: req.payload.email}).then(function(user){
     if(!user){
        next(new UnauthorizedResponse ());
        }
@@ -23,13 +23,18 @@ const user = (req, res, next) => {
   }).catch(next);
 }
 const admin = (req, res, next) => {
-  User.findById(req.payload.id).then(function(user){
-    if(!user && user.role !== 1){
+  User.findOne({email: req.payload.email}).then(function(user){
+    if(!user || user.role !== 1){
        next(new UnauthorizedResponse ());
-       }
+    }
     req.user = user;
     next();
-  }).catch(next);
+  }).catch(
+    err => {
+      console.log(err);
+      next();
+    }
+  );
 }
 let auth = {
   required: jwt({
