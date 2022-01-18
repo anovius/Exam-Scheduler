@@ -20,7 +20,7 @@ function Teachers() {
 
     return(
         <>
-            
+
             <div className="col-md-11 table-container box-shadow" align="center">
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className="schedule-title m-2">

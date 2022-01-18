@@ -25,10 +25,11 @@ function Sidebar(){
                     <div className='sub-menu mt-4'>
                         <NavLink to='/admin/classes' activeClassName='active'> <i className="fas fa-users-class"></i> Classes</NavLink>
                         <NavLink to='/admin/students' activeClassName='active'> <i className="fas fa-users"></i> Students</NavLink>
+                        <NavLink to='/admin/subjects' activeClassName='active'> <i className="fal fa-books"></i> Subjects</NavLink>
                         <NavLink to='/admin/teachers' activeClassName='active'> <i className="fas fa-chalkboard-teacher"></i> Teachers</NavLink>
                         <NavLink to='/admin/others' activeClassName='active'> <i className="fas fa-coins"></i> Others</NavLink>
                     </div>
-
+                    
                     <h3 className='mt-4'>Others</h3>
                     <div className='sub-menu mt-4'>
                         <NavLink to='/admin/settings' activeClassName='active'> <i className="fas fa-cogs"></i> Settings</NavLink>

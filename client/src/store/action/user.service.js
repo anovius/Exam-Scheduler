@@ -12,7 +12,14 @@ const UserService = {
     getStudents: () => {
         return http.get('/user/get/students');
     },
+    createSubject: (body) => {
+        return http.post('/user/add/subject', body);
+    },
 
+    getSubjects: () => {
+        return http.get('/user/get/subjects');
+    },
+    
     createTeacher: (body) => {
         return http.post('/user/add/teacher', body);
     },
