@@ -5,14 +5,12 @@ import Upload from "../../../shared/Upload";
 
 function AddSubject(){
     const [name, setName] = useState('');
-    const [rollNo, setRollNo] = useState('');
-    const [email, setEmail] = useState('');
+    const [className, setClassName] = useState('');
 
     function createSubject(){
         let subject = {
-            fullName: name,
-            userName: rollNo,
-            email: email
+            name: name,
+            class: className,
         }
 
         UserService.createSubject(subject).then(res => {
@@ -37,16 +35,12 @@ function AddSubject(){
                     <form id="subjectForm">  
                     <div className="form-group">
                         <label> <i className="fas fa-user"></i> Name</label><br/>
-                        <input type="text" placeholder="eg: Junaid Zubair" onChange={e => setName(e.target.value)}/>
+                        <input type="text" placeholder="eg: OOP" onChange={e => setName(e.target.value)}/>
                     </div>  
                     <div className="form-group">
-                        <label> <i className="fas fa-clipboard-list"></i> Roll Number</label><br/>
-                        <input type="text" placeholder="eg: BCSF18A511" onChange={e => setRollNo(e.target.value)}/>
+                        <label> <i className="fas fa-clipboard-list"></i> Class Name</label><br/>
+                        <input type="text" placeholder="eg: CSF18A" onChange={e => setClassName(e.target.value)}/>
                     </div>  
-                    <div className="form-group">
-                        <label> <i className="fas fa-envelope"></i> Email</label><br/>
-                        <input type="email" placeholder="eg: bcsf18a511@pucit.edu.pk" onChange={e => setEmail(e.target.value)}/>
-                    </div>
                     <button type="button" className="submit background-green mt-4 mb-3" onClick={createSubject}> Add Subject</button> 
                     </form>
                 </div>
