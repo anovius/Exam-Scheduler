@@ -77,6 +77,7 @@ module.exports = (app) => {
 
   require('./models/User');
   require('./models/Class');
+  require('./models/Subject');
   require('./utilities/passport');
 
 
