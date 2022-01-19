@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Swal from 'sweetalert2'
-import UserService from "../../../../store/action/user.service";
+import SubjectService from "../../../../store/action/subject.service";
 import Upload from "../../../shared/Upload";
 
 function AddSubject(){
@@ -13,7 +13,7 @@ function AddSubject(){
             class: className,
         }
 
-        UserService.createSubject(subject).then(res => {
+        SubjectService.createSubject(subject).then(res => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',

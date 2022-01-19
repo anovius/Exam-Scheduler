@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { environment } from "../../../environment";
-import UserService from "../../../store/action/user.service";
+import SubjectService from "../../../store/action/subject.service";
 
 function Subjects() {
 
-    const [Subjects, setSubjects] = useState([]);
+    const [subjects, setSubjects] = useState([]);
 
     function getSubjects() {
-        UserService.getSubjects().then(res => {
+        SubjectService.getSubjects().then(res => {
+            console.log(res);
             setSubjects(res.data.data.docs);
         });
     }
@@ -36,26 +37,17 @@ function Subjects() {
                     <table className="table">
                         <thead className="box-shadow-bottom">
                             <tr>
-                                <th></th>
                                 <th scope="col">Subject Name</th>
-                                <th scope="col">User Name</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Class</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {Subjects.map((subject, i) =>
-                                <tr className="table-data">
-                                    <td>
-                                        <div className="profile-img">
-                                            <img src={environment.file_url + subject.img} alt="user" />
-                                        </div>
-                                    </td>
-                                    <td>{subject.fullName}</td>
-                                    <td>{subject.userName}</td>
-                                    <td>{subject.email}</td>
-                                    <td></td>
-                                </tr>
-                            )}
+                        {subjects.map((subject, i) =>
+                            <tr className="table-data">
+                                <td>{subject.name}</td>
+                                <td>{subject.class}</td>
+                            </tr>
+                        )}
                         </tbody>
                     </table>
                 </div>
