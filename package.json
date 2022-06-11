@@ -42,6 +42,7 @@
     "nodemailer": "^6.4.17",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
+    "read-excel-file": "^5.3.4",
     "request": "^2.88.2",
     "sharp": "^0.28.3",
     "slug": "^0.9.4",

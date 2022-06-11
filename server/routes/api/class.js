@@ -6,7 +6,6 @@ let {
   BadRequestResponse,
   UnauthorizedResponse,
 } = require("express-http-response");
-
 var Class = mongoose.model("Class");
 
 router.param("slug", (req, res, next, slug) => {
