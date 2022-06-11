@@ -34,8 +34,6 @@ router.post("/", auth.required, auth.admin, (req, res, next) => {
 
 router.get("/get/all", auth.required, auth.admin, (req, res, next) => {
     const options = {
-        page: req.query.page || 1,
-        limit: req.query.limit || 10,
         sort: {createdAt: -1}
     }
 
@@ -43,7 +41,7 @@ router.get("/get/all", auth.required, auth.admin, (req, res, next) => {
         status: 1
     };
 
-    Subject.paginate(query, options, (err, result) => {
+    Subject.find(query, (err, result) => {
         if(err || !result){
             next(new BadRequestResponse(err));
         }
