@@ -33,6 +33,16 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                     resolve(data);
                 });
             }
+
+            if(req.body.type === 'classes'){
+                readXlsxFile(filePath).then((rows) => {
+                    for (let i = 1; i < rows.length; i++) {
+                        data.push({
+                        });
+                    }
+                    resolve(data);
+                });
+            }
         })
     ]).then(async () => {
         if(req.body.type === 'subjects'){
