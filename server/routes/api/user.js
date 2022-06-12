@@ -3,6 +3,7 @@ let router = require("express").Router();
 let passport = require("passport");
 let User = mongoose.model("User");
 let Room = mongoose.model("Room");
+let Slot = mongoose.model("Slot");
 let auth = require("../auth");
 let {
   OkResponse,
@@ -121,6 +122,19 @@ User.find(query, (err, result) => {
 
 router.get('/others/rooms', auth.required, auth.admin, (req, res, next) => {
   Room.find({status: 1}, (err, data) => {
+    next (new OkResponse(data));
+  })
+})
+
+router.post('/add/slot', auth.required, auth.admin, (req, res, next) => {
+  let slot = new Slot(req.body);
+  slot.save((err, data) => {
+    next(new OkResponse(data))
+  });
+})
+
+router.get('/others/slots', auth.required, auth.admin, (req, res, next) => {
+  Slot.find({status: 1}, (err, data) => {
     next (new OkResponse(data));
   })
 })

@@ -23,7 +23,15 @@ const UserService = {
 
     getRooms:() => {
         return http.get('/user/others/rooms');
-    }
+    },
+
+    addSlot: (body) => {
+        return http.post('/user/add/slot', body);
+    },
+
+    getSlots:() => {
+        return http.get('/user/others/slots');
+    },
 }
 
 export default UserService;

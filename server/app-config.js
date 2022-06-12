@@ -79,6 +79,7 @@ module.exports = (app) => {
   require('./models/Class');
   require('./models/Subject');
   require('./models/Room');
+  require('./models/Slot');
   require('./utilities/passport');
 
 
