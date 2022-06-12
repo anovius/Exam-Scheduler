@@ -80,6 +80,7 @@ module.exports = (app) => {
   require('./models/Subject');
   require('./models/Room');
   require('./models/Slot');
+  require('./models/Schedule');
   require('./utilities/passport');
 
 
