@@ -38,6 +38,9 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                 readXlsxFile(filePath).then((rows) => {
                     for (let i = 1; i < rows.length; i++) {
                         data.push({
+                            degree: rows[i][0],
+                            year: rows[i][1],
+                            section: rows[i][2],
                         });
                     }
                     resolve(data);
@@ -49,6 +52,13 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
             data.map(async (item) => {
                 let subject = new Subject(item);
                 await subject.save();
+            })
+        }
+
+        if(req.body.type === 'classes'){
+            data.map(async (item) => {
+                let classs = new Class(item);
+                await classs.save();
             })
         }
         next(new OkResponse({message: "File uploaded successfully"}));

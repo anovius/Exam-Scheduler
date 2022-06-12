@@ -42,7 +42,7 @@ router.get("/get/all", auth.required, auth.admin, (req, res, next) => {
         status: 1
     };
 
-    Class.paginate(query, options, (err, result) => {
+    Class.find(query, (err, result) => {
         if(err || !result){
             next(new BadRequestResponse(err));
         }
