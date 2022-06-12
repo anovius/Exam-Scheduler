@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import logo from "../../../assets/logo-dark.png";
+import ScheduleService from "../../../store/action/schedule.service";
 import SubjectService from "../../../store/action/subject.service";
 import UserService from "../../../store/action/user.service";
 
 function Create(){
+    const history = useHistory();
     const [stepNumber, setStepNumber] = useState(0);
     const [subjects, setSubjects] = useState([]);
     const [teachers, setTeachers] = useState([]);
@@ -111,6 +113,32 @@ function Create(){
         })
     }, [])
 
+    const onSubmit = () => {
+        let data = [];
+        subjects.forEach(subject => {
+            if(subject.isSelected){
+                data.push({
+                    name: subject.name,
+                    room: subject.room,
+                    date: subject.date,
+                    slot: subject.slot,
+                    teacher: subject.teacher
+                })
+            }
+        })
+
+        ScheduleService.create({title: title, start: start, end: end, subjects: data}).then(res => {
+            Swal.fire({
+                title: "Success",
+                text: "Schedule created successfully",
+                icon: "success",
+                confirmButtonText: "OK"
+            });
+        })
+
+        history.push("/admin");
+    }
+
 
     return(
         <>
@@ -190,7 +218,7 @@ function Create(){
                     <div className="navigation">
                         { stepNumber !== 0 && <button className="custom-btn me-3 text-black-50" onClick={() => setStepNumber(stepNumber - 1)}>Previous</button>}
                         { stepNumber !== 1 && <button className="custom-btn background-blue" onClick={() => setStepNumber(stepNumber + 1)} >Next</button>}
-                        { stepNumber === 1 && <Link to="/admin"><button className="custom-btn background-blue">Finish</button></Link>}
+                        { stepNumber === 1 && <button className="custom-btn background-blue" onClick={onSubmit}>Finish</button>}
                     </div>
                 </div>
             </div>

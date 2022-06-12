@@ -9,6 +9,9 @@ const ScheduleSchema = new mongoose.Schema({
         unique:true,
         required:true
     },
+    title: {
+        type: String,
+    },
     start:{
         type: String
     },
@@ -21,7 +24,7 @@ const ScheduleSchema = new mongoose.Schema({
             teacher: {type: String},
             room: {type: String},
             slot: {type: String},
-            date: {type: String}
+            date: {type: Date}
         }
     ],
     status: {
@@ -47,6 +50,7 @@ ScheduleSchema.methods.slugify = function () {
 ScheduleSchema.methods.toJSON = function () {
     return {
         slug: this.slug,
+        title: this.title,
         start: this.start,
         end: this.end,
         subjects: this.subjects,
