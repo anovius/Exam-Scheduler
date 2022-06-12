@@ -2,6 +2,7 @@ let mongoose = require("mongoose");
 let router = require("express").Router();
 let passport = require("passport");
 let User = mongoose.model("User");
+let Room = mongoose.model("Room");
 let auth = require("../auth");
 let {
   OkResponse,
@@ -117,5 +118,11 @@ User.find(query, (err, result) => {
   next(new OkResponse(result));
 });
 });
+
+router.get('/others/rooms', auth.required, auth.admin, (req, res, next) => {
+  Room.find({status: 1}, (err, data) => {
+    next (new OkResponse(data));
+  })
+})
 
 module.exports = router;

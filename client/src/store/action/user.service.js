@@ -20,6 +20,10 @@ const UserService = {
     getTeachers: () => {
         return http.get('/user/get/teachers');
     },
+
+    getRooms:() => {
+        return http.get('/user/others/rooms');
+    }
 }
 
 export default UserService;

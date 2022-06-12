@@ -15,6 +15,7 @@ var cpUpload = multer.fields([
 var Class = mongoose.model("Class");
 var User = mongoose.model("User");
 var Subject = mongoose.model("Subject");
+var Room = mongoose.model("Room");
 
 
 router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => {
@@ -73,6 +74,18 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                 });
             }
 
+            if(req.body.type === 'others'){
+                readXlsxFile(filePath).then((rows) => {
+                    for (let i = 1; i < rows.length; i++) {
+                        data.push({
+                            name: rows[i][0],
+                            capacity: rows[i][1],
+                        });
+                    }
+                    resolve(data);
+                });
+            }
+
             
         })
     ]).then(async () => {
@@ -105,6 +118,13 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                 user.setPassword(item.userName);
                 user.role = 3;
                 await user.save();
+            })
+        }
+
+        if(req.body.type === 'others'){
+            data.map(async (item) => {
+                let room = new Room(item);
+                await room.save();
             })
         }
 
