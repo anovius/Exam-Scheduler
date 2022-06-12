@@ -8,7 +8,7 @@ function Students() {
 
     function getStudents(){
         UserService.getStudents().then(res => {
-            setStudents(res.data.data.docs);
+            setStudents(res.data.data);
         });
     }
 
@@ -56,14 +56,6 @@ function Students() {
                     )}
                 </tbody>
                 </table>
-                </div>
-                <div className='d-flex justify-content-center align-items-center pl-2'>
-                    <div>
-                        <button disabled className="custom-btn disabled me-4">Prev</button>
-                    </div>
-                    <div>
-                        <button className="custom-btn background-blue">Next</button>
-                    </div>
                 </div>
             </div>
         </>

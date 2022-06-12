@@ -74,7 +74,7 @@ router.get("/get/students", auth.required, auth.admin, (req, res, next) => {
     status: 1,
   };
 
-  User.paginate(query, options, (err, result) => {
+  User.find(query, (err, result) => {
     if (err) {
       next(new BadRequestResponse(err));
     }
