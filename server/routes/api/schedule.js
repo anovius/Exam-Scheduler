@@ -16,4 +16,14 @@ router.post('/', auth.required, auth.admin, (req, res, next) => {
     });
 });
 
+router.get('/', auth.required, auth.admin, (req, res, next) => {
+  //get last 1 schedule
+  Schedule.find({}).sort({_id: -1}).limit(1).exec((err, schedule) => {
+    if (err) {
+      next(new BadRequestResponse(err));
+    }
+    next(new OkResponse(schedule[0]));
+  })
+})
+
 module.exports = router;

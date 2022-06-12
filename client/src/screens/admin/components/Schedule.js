@@ -1,62 +1,47 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ScheduleService from "../../../store/action/schedule.service";
 
 function Schedule() {
+
+    const [schedule, setSchedule] = useState({
+        start: "",
+        end: "",
+        title: "",
+        subjects: []
+    });
+
+    useEffect(() => {
+        ScheduleService.get().then(res => {
+            if(res.data.data) setSchedule(res.data.data);
+        })
+    }, []);
+
+    const formatDate = (date) => {
+        let d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+    const getDay = (date) => {
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        return days[new Date(date).getDay()];
+    }
+
     return(
         <>
-            
-            <div className="modal fade" id="filets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Filters</h5>
-                        </div>
-                        <div className="modal-body">
-                            <div className='d-flex justify-content-left '>
-                                <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="degree" checked></input>
-                                        CS
-                                </div>
-                                <div className="form-check me-4" >
-                                    <input className="form-check-input" type="radio" name="degree"></input>
-                                        SE
-                                </div>
-                                <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="degree"></input>
-                                        IT
-                                </div>
-                            </div>
-                            <div className='d-flex justify-content-left mt-4'>
-                                <div className="form-check me-4">
-                                    <input className="form-check-input" type="radio" name="section" checked></input>
-                                        Morning
-                                </div>
-                                <div className="form-check me-4 mb-2" >
-                                    <input className="form-check-input" type="radio" name="section"></input>
-                                        Afternoon
-                                </div>
-                            </div>
-                            <div class="col-sm-4 ">
-                                <select class="form-select box-shadow">
-                                    <option value="" disabled selected>Select Year</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="custom-btn background-blue" data-dismiss="modal">Apply</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="col-md-11 table-container box-shadow" align="center">
                 
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className="schedule-date">
                         <i className="fas fa-calendar-week me-2"></i>
-                        14-10-2021 - 22-10-2021
+                        {schedule.start} - {schedule.end}
                     </div>
                     <div>
                         <Link to="/schedule/create" ><button className="custom-btn background-green">Create</button></Link>
@@ -65,10 +50,9 @@ function Schedule() {
 
                 <div className='d-flex justify-content-between align-items-center mt-4 px-4'>
                     <div className="schedule-title ">
-                        BSCS Session Fall 2018
+                        {schedule.title}
                     </div>
                     <div>
-                        <button className="custom-btn background-blue" data-toggle="modal" data-target="#filets">Filter</button>
                     </div>
                 </div>
                 <div className="custom-table">
@@ -80,58 +64,20 @@ function Schedule() {
                         <th scope="col">Course</th>
                         <th scope="col">Time</th>
                         <th scope="col">Room</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="table-data">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
-                    <tr className="table-data active">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
-                    <tr className="table-data">
-                        <td>14-10-2021</td>
-                        <td>Monday</td>
-                        <td>Data Structures</td>
-                        <td>12:00 PM</td>
-                        <td>A24</td>
-                        <td> <i className="fas fa-clipboard-list"></i></td>
-                    </tr>
+                    {schedule.subjects.map(subject => {
+                        return(
+                            <tr className= 'table-data'>
+                                <td>{formatDate(subject.date)}</td>
+                                <td>{getDay(subject.date)}</td>
+                                <td>{subject.name}</td>
+                                <td>{subject.slot}</td>
+                                <td>{subject.room}</td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
                 </table>
                 </div>

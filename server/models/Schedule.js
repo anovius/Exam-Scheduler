@@ -20,7 +20,7 @@ const ScheduleSchema = new mongoose.Schema({
     },
     subjects: [
         {
-            subject: {type: String},
+            name: {type: String},
             teacher: {type: String},
             room: {type: String},
             slot: {type: String},
