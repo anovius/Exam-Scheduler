@@ -110,7 +110,7 @@ let query = {
   status: 1,
 };
 
-User.paginate(query, options, (err, result) => {
+User.find(query, (err, result) => {
   if (err) {
     next(new BadRequestResponse(err));
   }

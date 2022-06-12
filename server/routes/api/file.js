@@ -46,6 +46,21 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                     resolve(data);
                 });
             }
+
+            if(req.body.type === 'teachers'){
+                readXlsxFile(filePath).then((rows) => {
+                    for (let i = 1; i < rows.length; i++) {
+                        data.push({
+                            fullName: rows[i][0],
+                            email: rows[i][1],
+                            userName: rows[i][2],
+                        });
+                    }
+                    resolve(data);
+                });
+            }
+
+            
         })
     ]).then(async () => {
         if(req.body.type === 'subjects'){
@@ -61,6 +76,16 @@ router.post('/', cpUpload, auth.required, auth.admin, async (req, res, next) => 
                 await classs.save();
             })
         }
+
+        if(req.body.type === 'teachers'){
+            data.map(async (item) => {
+                let user = new User(item);
+                user.setPassword(item.userName);
+                user.role = 2;
+                await user.save();
+            })
+        }
+
         next(new OkResponse({message: "File uploaded successfully"}));
     })
 })
