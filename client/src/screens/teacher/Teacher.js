@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router';
 
-import { Sidebar, Schedule, Complaints } from './components';
-import { Notifications, Settings, Header } from '../shared';
+import { Sidebar, Schedule } from './components';
+import { Notifications, Settings, Header, Complaints, AddComplaint } from '../shared';
 
 function Teacher(){
     return(
@@ -19,6 +19,7 @@ function Teacher(){
                       <Route exact path="/teacher/complaints" component = {Complaints} />
                       <Route exact path="/teacher/notifications" component = {Notifications} />
                       <Route exact path="/teacher/settings" component = {Settings} />
+                      <Route exact path="/teacher/complaints/add" component = {AddComplaint} />
                     </Switch>
                   </div>
                   </div>

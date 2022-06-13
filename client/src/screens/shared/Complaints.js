@@ -1,4 +1,9 @@
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 function Complaints() {
+    const { pathname } = useLocation();
+    const [link, setLink] = useState(pathname+'/add');
+
     return(
         <>
             <div className="col-md-11 table-container box-shadow" align="center">
@@ -7,7 +12,9 @@ function Complaints() {
                         Complaints
                     </div>
                     <div>
+                        <Link to = {link}>
                     <button className="custom-btn background-blue">Add</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="custom-table mt-4">

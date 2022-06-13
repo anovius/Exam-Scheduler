@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router';
 
-import { Sidebar, Schedule, Complaints, AddComplaint } from './components';
-import { Notifications, Settings, Header } from '../shared';
+import { Sidebar, Schedule} from './components';
+import { Notifications, Settings, Header, Complaints, AddComplaint } from '../shared';
 
 function Student(){
     return(
@@ -20,7 +20,6 @@ function Student(){
                     <Route exact path="/student/notifications" component = {Notifications} />
                     <Route exact path="/student/settings" component = {Settings} />
                     <Route exact path="/student/complaints/add" component = {AddComplaint} />
-
                   </Switch>
                 </div>
                 </div>
