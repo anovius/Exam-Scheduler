@@ -54,4 +54,15 @@ router.get("/get/my", auth.required, auth.user, (req, res, next) => {
     });
 })
 
+router.post('/reply/:slug', auth.required, auth.admin, (req, res, next) => {
+    Complaint.findOneAndUpdate({slug: req.params.slug}, {reply: req.body.reply, status: 2}, (err, result) => {
+        if (err) {
+            next(new BadRequestResponse(err.message));
+        }
+        else {
+            next(new OkResponse(result));
+        }
+    })
+})
+
 module.exports = router;

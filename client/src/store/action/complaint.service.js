@@ -7,6 +7,14 @@ const ComplaintService = {
 
     getMy: () => {
         return http.get('/complaint/get/my');
+    },
+
+    getAll: () => {
+        return http.get('/complaint/get/all');
+    },
+
+    reply: (slug, body) => {
+        return http.post(`/complaint/reply/${slug}`, body);
     }
 }
 
