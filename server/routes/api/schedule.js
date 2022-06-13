@@ -1,6 +1,7 @@
 var router = require("express").Router();
 var mongoose = require("mongoose");
 let auth = require("../auth");
+var writeXlsxFile = require('write-excel-file/node')
 let {
   OkResponse,
   BadRequestResponse,
@@ -40,5 +41,44 @@ router.get('/teacher', auth.required, auth.user, (req, res, next) => {
     next(new OkResponse(schedule[0]));
   })
 })
+
+router.get('/export', auth.required, auth.admin, (req, res, next) => {
+  Schedule.find({}).sort({_id: -1}).limit(1).exec(async (err, schedule) => {
+    const schema = [
+      {
+          column: 'Subject',
+          type: String,
+          value: subject => subject.name
+      },
+      {
+          column: 'Teacher',
+          type: String,
+          value: subject => subject.teacher
+      },
+      {
+          column: 'Room',
+          type: String,
+          value: subject => subject.room
+      },
+      {
+          column: 'Slot',
+          type: String,
+          value: subject => subject.slot
+      },
+      {
+          column: 'Date',
+          type: String,
+          value: subject => subject.date.toString()
+      }
+    ];
+
+    await writeXlsxFile(schedule[0].subjects, {
+      schema,
+      filePath: process.cwd() + '/server/public/downloads/Schedule.xlsx'
+    })
+
+    res.download(process.cwd() + '/server/public/downloads/Schedule.xlsx');
+  })
+});
 
 module.exports = router;

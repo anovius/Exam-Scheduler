@@ -47,7 +47,8 @@
     "sharp": "^0.28.3",
     "slug": "^0.9.4",
     "socket.io": "^3.1.1",
-    "uuidv4": "^6.2.10"
+    "uuidv4": "^6.2.10",
+    "write-excel-file": "^1.4.4"
   },
   "devDependencies": {
     "newman": "^5.2.1",
