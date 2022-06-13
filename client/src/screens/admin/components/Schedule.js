@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScheduleService from "../../../store/action/schedule.service";
-
+import FileDownload from 'js-file-download';
 function Schedule() {
 
     const [schedule, setSchedule] = useState({
@@ -32,6 +32,12 @@ function Schedule() {
     const getDay = (date) => {
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         return days[new Date(date).getDay()];
+    }
+
+    const downloadFile = () => {
+        ScheduleService.download().then(res => {
+            FileDownload(res.data, 'Schedule.xlsx');
+        })
     }
 
     return(
@@ -81,11 +87,9 @@ function Schedule() {
                 </tbody>
                 </table>
                 </div>
-                <Link to="/schedule">
-                    <div className="edit-float">
+                    <div className="edit-float" onClick={downloadFile}>
                         <i class="fas fa-edit"></i>
                     </div>
-                </Link>
             </div>
         </>
     );

@@ -11,6 +11,10 @@ const ScheduleService = {
 
     getTeacher: () => {
         return http.get('/schedule/teacher');
+    },
+
+    download: () => {
+        return http.get('/schedule/export');
     }
 }
 
