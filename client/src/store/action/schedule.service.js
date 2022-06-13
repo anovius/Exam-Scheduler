@@ -16,6 +16,10 @@ const ScheduleService = {
 
     download: () => {
         window.open(environment.api_url+'/schedule/export', '_blank')?.focus();
+    },
+
+    attendance: (body) => {
+        return http.post('/schedule/attendance', body);
     }
 }
 

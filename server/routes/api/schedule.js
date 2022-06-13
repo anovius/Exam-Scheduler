@@ -86,4 +86,23 @@ router.get('/export', (req, res, next) => {
   })
 });
 
+router.post('/attendance', auth.required, auth.user, async (req, res, next) => {
+  console.log(req.body);
+  Schedule.find({}).sort({_id: -1}).limit(1).exec((err, schedule) => {
+    if (err) {
+      next(new BadRequestResponse(err));
+    }
+
+    schedule[0].subjects.forEach(subject => {
+      if (subject.name === req.body.subject && subject.className === req.body.className && subject.teacher === req.user.fullName) {
+        subject.attendance = req.body.attendance;
+      }
+    })
+
+    schedule[0].save((err, schedule) => {
+      next(new OkResponse("Attendance updated successfully"));
+    })
+  })
+})
+
 module.exports = router;

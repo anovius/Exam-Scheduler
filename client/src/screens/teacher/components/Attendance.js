@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import ScheduleService from "../../../store/action/schedule.service";
 import UserService from "../../../store/action/user.service";
 
 function Attendance(){
-    const {className} = useParams();
+    const {className, subject} = useParams();
     const [students, setStudents] = useState([]);
+
+    const history = useHistory();
 
     useEffect(() => {
         UserService.getStudents({className: className}).then(res => {
@@ -26,6 +29,18 @@ function Attendance(){
         let data = [...students];
         data[index].status = !data[index].status;
         setStudents(data);
+    }
+
+    const onSubmit = () => {
+        let body = {
+            subject: subject,
+            className: className,
+            attendance: students
+        }
+
+        ScheduleService.attendance(body).then(res => {
+            history.push("/teacher");
+        })
     }
 
     return(
@@ -72,7 +87,7 @@ function Attendance(){
                         <Link to="/teacher"><button className="custom-btn background-green me-4">Cancel</button></Link>
                     </div>
                     <div>
-                        <button className="custom-btn background-blue">Submit</button>
+                        <button className="custom-btn background-blue" onClick={onSubmit}>Submit</button>
                     </div>
                 </div>
             </div>

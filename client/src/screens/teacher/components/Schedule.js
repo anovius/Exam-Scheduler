@@ -69,7 +69,7 @@ function Schedule() {
                                 <td>{subject.name}</td>
                                 <td>{subject.slot}</td>
                                 <td>{subject.room}</td>
-                                <Link to={'/teacher/attendance/'+subject.className.toLowerCase()}><td> <i className="fas fa-clipboard-list mt-2"></i></td></Link>
+                                <Link to={'/teacher/attendance/'+subject.className+'/'+subject.name}><td> <i className="fas fa-clipboard-list mt-2"></i></td></Link>
                             </tr>
                         )
                     })}
