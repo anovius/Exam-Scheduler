@@ -12,6 +12,8 @@ function Schedule() {
         subjects: []
     });
 
+    const [index, setIndex] = useState(0);
+
     useEffect(() => {
         ScheduleService.get().then(res => {
             if(res.data.data) setSchedule(res.data.data);
@@ -41,6 +43,38 @@ function Schedule() {
 
     return(
         <>
+        <div class="modal fade" id="attendance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Attendance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table className="table">
+                    <thead className="box-shadow-bottom">
+                        <tr>
+                            <th scope="col">Roll #</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {schedule.subjects[index]?.attendance.map((subject, index) => {
+                            return(
+                                <tr>
+                                    <td>{subject.userName}</td>
+                                    <td>{subject.status ? "Present" : "Absent"}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
             <div className="col-md-11 table-container box-shadow" align="center">
                 
                 <div className='d-flex justify-content-between align-items-center'>
@@ -69,10 +103,11 @@ function Schedule() {
                         <th scope="col">Course</th>
                         <th scope="col">Time</th>
                         <th scope="col">Room</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {schedule.subjects.map(subject => {
+                    {schedule.subjects.map((subject, i) => {
                         return(
                             <tr className= 'table-data'>
                                 <td>{formatDate(subject.date)}</td>
@@ -80,6 +115,7 @@ function Schedule() {
                                 <td>{subject.name}</td>
                                 <td>{subject.slot}</td>
                                 <td>{subject.room}</td>
+                                <td data-toggle="modal" data-target="#attendance"><i onClick={() => setIndex(i)} className="fas fa-clipboard-list mt-2"></i></td>
                             </tr>
                         )
                     })}
