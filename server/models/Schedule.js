@@ -24,7 +24,8 @@ const ScheduleSchema = new mongoose.Schema({
             teacher: {type: String},
             room: {type: String},
             slot: {type: String},
-            date: {type: Date}
+            date: {type: Date},
+            className: {type: String},
         }
     ],
     status: {

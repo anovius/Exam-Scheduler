@@ -95,6 +95,7 @@ function Create(){
                     date: "",
                     slot: "",
                     teacher: "",
+                    className: subject.class
                 })
             })
             setSubjects(data);
@@ -122,7 +123,8 @@ function Create(){
                     room: subject.room,
                     date: subject.date,
                     slot: subject.slot,
-                    teacher: subject.teacher
+                    teacher: subject.teacher,
+                    className: subject.className
                 })
             }
         })

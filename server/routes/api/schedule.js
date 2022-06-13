@@ -51,6 +51,11 @@ router.get('/export', (req, res, next) => {
           value: subject => subject.name
       },
       {
+        column: 'Class',
+        type: String,
+        value: subject => subject.className
+      },
+      {
           column: 'Teacher',
           type: String,
           value: subject => subject.teacher

@@ -151,4 +151,13 @@ router.post('/settings', auth.required, auth.user, (req, res, next) => {
   }
 })
 
+router.post('/get/students', auth.required, auth.user, (req, res, next) => {
+  let query = {
+    userName: new RegExp(req.body.className, "i"),
+  }
+  User.find(query, (err, data) => {
+    next(new OkResponse(data));
+  })
+});
+
 module.exports = router;
