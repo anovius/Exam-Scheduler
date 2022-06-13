@@ -81,6 +81,7 @@ module.exports = (app) => {
   require('./models/Room');
   require('./models/Slot');
   require('./models/Schedule');
+  require('./models/Complaint');
   require('./utilities/passport');
 
 

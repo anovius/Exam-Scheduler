@@ -10,6 +10,8 @@ router.use("/file", require("./file"));
 
 router.use("/schedule", require("./schedule"));
 
+router.use("/complaint", require("./complaint"));
+
 router.use("/upload", require("./upload"));
 
 module.exports = router;
