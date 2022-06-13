@@ -42,7 +42,7 @@ router.get('/teacher', auth.required, auth.user, (req, res, next) => {
   })
 })
 
-router.get('/export', auth.required, auth.admin, (req, res, next) => {
+router.get('/export', (req, res, next) => {
   Schedule.find({}).sort({_id: -1}).limit(1).exec(async (err, schedule) => {
     const schema = [
       {

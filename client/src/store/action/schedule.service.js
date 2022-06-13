@@ -1,4 +1,5 @@
 import http from "./api.service";
+import { environment } from "../../environment";
 
 const ScheduleService = {
     create: (body) => {
@@ -14,7 +15,7 @@ const ScheduleService = {
     },
 
     download: () => {
-        return http.get('/schedule/export');
+        window.open(environment.api_url+'/schedule/export', '_blank')?.focus();
     }
 }
 

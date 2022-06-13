@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import fs from 'fs';
 import ScheduleService from "../../../store/action/schedule.service";
 import FileDownload from 'js-file-download';
 function Schedule() {
@@ -35,9 +36,7 @@ function Schedule() {
     }
 
     const downloadFile = () => {
-        ScheduleService.download().then(res => {
-            FileDownload(res.data, 'Schedule.xlsx');
-        })
+        ScheduleService.download();
     }
 
     return(
