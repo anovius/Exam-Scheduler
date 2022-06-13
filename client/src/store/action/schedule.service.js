@@ -7,6 +7,10 @@ const ScheduleService = {
 
     get: () => {
         return http.get('/schedule');
+    },
+
+    getTeacher: () => {
+        return http.get('/schedule/teacher');
     }
 }
 

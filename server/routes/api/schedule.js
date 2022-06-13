@@ -17,11 +17,26 @@ router.post('/', auth.required, auth.admin, (req, res, next) => {
 });
 
 router.get('/', auth.required, auth.admin, (req, res, next) => {
-  //get last 1 schedule
   Schedule.find({}).sort({_id: -1}).limit(1).exec((err, schedule) => {
     if (err) {
       next(new BadRequestResponse(err));
     }
+    next(new OkResponse(schedule[0]));
+  })
+})
+
+router.get('/teacher', auth.required, auth.user, (req, res, next) => {
+  Schedule.find({}).sort({_id: -1}).limit(1).exec((err, schedule) => {
+    if (err) {
+      next(new BadRequestResponse(err));
+    }
+    
+    let filtered = schedule[0].subjects.filter(subject => {
+      return subject.teacher === req.user.fullName;
+    });
+
+    schedule[0].subjects = filtered;
+
     next(new OkResponse(schedule[0]));
   })
 })
