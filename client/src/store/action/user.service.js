@@ -32,6 +32,10 @@ const UserService = {
     getSlots:() => {
         return http.get('/user/others/slots');
     },
+
+    settings: (body) => {
+        return http.post('/user/settings', body);
+    }
 }
 
 export default UserService;

@@ -139,4 +139,16 @@ router.get('/others/slots', auth.required, auth.admin, (req, res, next) => {
   })
 })
 
+router.post('/settings', auth.required, auth.user, (req, res, next) => {
+  if (req.user.validPassword(req.body.currentPassword)) {
+    req.user.setPassword(req.body.newPassword);
+    req.user.save((err, data) => {
+      next(new OkResponse("Password changed successfully"));
+    });
+  }
+  else {
+    next(new BadRequestResponse("Current Password is incorrect"));
+  }
+})
+
 module.exports = router;
