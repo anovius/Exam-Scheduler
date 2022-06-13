@@ -43,6 +43,14 @@ ComplaintSchema.methods.slugify = function () {
     this.slug = slug(((Math.random() * Math.pow(36, 6)) | 0).toString(36));
 };
 
+var autoPopulate = function (next) {
+    this.populate("by");
+    next();
+  };
+  
+ComplaintSchema.pre('findOne', autoPopulate);
+ComplaintSchema.pre('find', autoPopulate);
+
 ComplaintSchema.methods.toJSON = function () {
     return {
         slug: this.slug,

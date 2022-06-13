@@ -95,3 +95,8 @@ button {
     margin-top: 10px;
     color: var(--text);
   }
+
+
+  .custom-table .view{
+    cursor: pointer;
+  }
