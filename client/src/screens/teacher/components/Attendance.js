@@ -10,7 +10,7 @@ function Attendance(){
     const history = useHistory();
 
     useEffect(() => {
-        UserService.getStudents({className: className}).then(res => {
+        UserService.getStudentsList({className: className}).then(res => {
             let data = [];
             res.data.data.forEach(student => {
                 data.push({

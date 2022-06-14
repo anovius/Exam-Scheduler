@@ -37,7 +37,7 @@ const UserService = {
         return http.post('/user/settings', body);
     },
 
-    getStudents: (body) => {
+    getStudentsList: (body) => {
         return http.post('/user/get/students', body);
     }
 }
