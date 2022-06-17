@@ -7,10 +7,9 @@
 }
 
 .wizard{
-    height: 500px;
+    height: 100%;
     background-color: var(--white);
     position: relative;
-    border-radius: 10px;
     overflow: scroll;
 }
 
@@ -19,10 +18,12 @@
 }
 
 .wizard .navigation{
-    position: absolute;
-    bottom: 0px;
+    position: fixed;
+    top: 0px;
     right: 0px;
     padding: 20px;
+    background-color: var(--white);
+    border-radius: 0px 0px 10px 10px;
 }
 
 .wizard input{
@@ -69,7 +70,7 @@
     position: fixed;
     width: 600px;
     height: 300px;
-    top: 50%;
+    top: 30%;
     left: 50%;
     margin-top: -100px;
     margin-left: -250px;
