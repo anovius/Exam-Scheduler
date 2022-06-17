@@ -94,7 +94,6 @@ function Create(){
     }
 
     Date.prototype.toString = function() {
-        console.log(this.getFullYear() + "-0" + (this.getMonth() + 1) + "-" + this.getDate());
         return this.getFullYear() + "-0" + (this.getMonth() + 1) + "-" + this.getDate();
     }
 
@@ -138,6 +137,7 @@ function Create(){
                 data[key][currentIndex].date = addDays(start, dateIndex);
                 console.log(addDays(start, dateIndex).toString(), dateIndex);
                 teacherIndex++;
+                roomIndex++;
                 dataIndex++;
             }
             else{
@@ -178,6 +178,28 @@ function Create(){
         setSelected(temp);
     }
 
+    const checkForError = (index) => {
+        if(selected[index].room === "" || selected[index].teacher === "" || selected[index].slot === "" || selected[index].date === "")
+            return true;
+        if(!(selected[index].room && selected[index].teacher && selected[index].slot && selected[index].date))
+            return true;
+        let temp = [...selected];
+        temp.splice(index, 1);
+        let i = temp.findIndex(item => item.room === selected[index].room && item.slot === selected[index].slot && item.date.toString() === selected[index].date.toString());
+        if(i !== -1){
+            return 'bg-danger text-white';
+        }
+        i = temp.findIndex(item => item.teacher === selected[index].teacher && item.slot === selected[index].slot && item.date.toString() === selected[index].date.toString());
+        if(i !== -1){
+            return 'bg-danger text-white';
+        }
+        //check if same className on Same date
+        i = temp.findIndex(item => item.className === selected[index].className && item.date.toString() === selected[index].date.toString());
+        if(i !== -1){
+            return 'bg-warning text-white';
+        }
+        return 'bg-white';
+    }
 
     return(
         <>
@@ -223,6 +245,7 @@ function Create(){
                                     <thead>
                                         <tr>
                                             <th scope="col">Subject</th>
+                                            <th scope="col">Class</th>
                                             <th scope="col">Room</th>
                                             <th scope="col">Teacher</th>
                                             <th scope="col">Slot</th>
@@ -231,8 +254,9 @@ function Create(){
                                     </thead>
                                     <tbody>
                                         { selected.map((subject, index) =>
-                                            <tr>
+                                            <tr className={checkForError(index)}>
                                                 <td>{subject.name}</td>
+                                                <td>{subject.className}</td>
                                                 <td>
                                                     <select class="form-control" value={subject.room} onChange={(e) => onRoomChange(index, e.target.value)}>
                                                         { rooms.map((room, index) =>

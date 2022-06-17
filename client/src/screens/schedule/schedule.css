@@ -94,3 +94,7 @@
 .schedule-container input[type = 'date']{
     width: 155px;
 }
+
+.faulty{
+    background-color: var(--red) !important;
+}
