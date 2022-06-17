@@ -154,6 +154,30 @@ function Create(){
         setSelected(temp);
     }
 
+    const onRoomChange = (index, value) => {
+        let temp = [...selected];
+        temp[index].room = value;
+        setSelected(temp);
+    }
+
+    const onTeacherChange = (index, value) => {
+        let temp = [...selected];
+        temp[index].teacher = value;
+        setSelected(temp);
+    }
+
+    const onSlotChange = (index, value) => {
+        let temp = [...selected];
+        temp[index].slot = value;
+        setSelected(temp);
+    }
+
+    const onDateChange = (index, value) => {
+        let temp = [...selected];
+        temp[index].date = value;
+        setSelected(temp);
+    }
+
 
     return(
         <>
@@ -210,28 +234,28 @@ function Create(){
                                             <tr>
                                                 <td>{subject.name}</td>
                                                 <td>
-                                                    <select class="form-control" value={subject.room}>
+                                                    <select class="form-control" value={subject.room} onChange={(e) => onRoomChange(index, e.target.value)}>
                                                         { rooms.map((room, index) =>
                                                             <option value={room.name}>{room.name}</option>
                                                         )}
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" value={subject.teacher}>
+                                                    <select class="form-control" value={subject.teacher}  onChange={(e) => onTeacherChange(index, e.target.value)}>
                                                         { teachers.map((teacher, index) =>
                                                             <option value={teacher.fullName}>{teacher.fullName}</option>
                                                         )}
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" value={subject.slot}>
+                                                    <select class="form-control" value={subject.slot}  onChange={(e) => onSlotChange(index, e.target.value)}>
                                                         { slots.map((slot, index) =>
                                                             <option value={slot.start + ' - ' + slot.end}>{slot.start + ' - ' + slot.end}</option>
                                                         )}
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <input type="date" class="form-control" value={subject.date.toString()} min = {start} max = {end} />
+                                                    <input type="date" class="form-control" value={subject.date.toString()} min = {start} max = {end}  onChange={(e) => onDateChange(index, e.target.value)} />
                                                 </td>
                                             </tr>
                                         )}
