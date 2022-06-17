@@ -6,8 +6,8 @@ const ScheduleService = {
         return http.post('/schedule', body);
     },
 
-    get: () => {
-        return http.get('/schedule');
+    get: (body = {} ) => {
+        return http.get('/schedule', { params: body });
     },
 
     getTeacher: () => {

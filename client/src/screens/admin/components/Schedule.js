@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import fs from 'fs';
 import ScheduleService from "../../../store/action/schedule.service";
 import FileDownload from 'js-file-download';
+import ClassService from "../../../store/action/class.service";
 function Schedule() {
 
     const [schedule, setSchedule] = useState({
@@ -12,11 +13,17 @@ function Schedule() {
         subjects: []
     });
 
+    const [classes, setClasses] = useState([]);
+
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         ScheduleService.get().then(res => {
             if(res.data.data) setSchedule(res.data.data);
+        })
+
+        ClassService.getAll().then(res => {
+            setClasses(res.data.data);
         })
     }, []);
 
@@ -39,6 +46,19 @@ function Schedule() {
 
     const downloadFile = () => {
         ScheduleService.download();
+    }
+
+    const filterClass = (className) => {
+        if(className === "0")  {
+            ScheduleService.get().then(res => {
+                if(res.data.data) setSchedule(res.data.data);
+            })
+        }
+        else{
+            ScheduleService.get({class: className}).then(res => {
+                if(res.data.data) setSchedule(res.data.data);
+            })
+        }
     }
 
     return(
@@ -87,11 +107,20 @@ function Schedule() {
                     </div>
                 </div>
 
-                <div className='d-flex justify-content-between align-items-center mt-4 px-4'>
+                <div className='d-flex justify-content-between align-items-center mt-4 px-4 mb-4'>
                     <div className="schedule-title ">
                         {schedule.title}
                     </div>
                     <div>
+                        <select className="form-select" onChange={(e) => filterClass(e.target.value)}>
+                            <option value="0">All</option>
+                            {classes.map((classs, index) => {
+                                return(
+                                    <option value={classs.degree+classs.year+classs.section}>{classs.degree+classs.year+classs.section}</option>
+                                );
+                            }
+                        )}
+                        </select>
                     </div>
                 </div>
                 <div className="custom-table">

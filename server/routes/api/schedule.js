@@ -22,6 +22,9 @@ router.get('/', auth.required, auth.user, (req, res, next) => {
     if (err) {
       next(new BadRequestResponse(err));
     }
+    if(req.query.class){
+      schedule[0].subjects = schedule[0].subjects.filter(subject => subject.className === req.query.class);
+    }
     next(new OkResponse(schedule[0]));
   })
 })
