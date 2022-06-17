@@ -61,21 +61,8 @@ function Create(){
     }, [])
 
     const onSubmit = () => {
-        let data = [];
-        subjects.forEach(subject => {
-            if(subject.isSelected){
-                data.push({
-                    name: subject.name,
-                    room: subject.room,
-                    date: subject.date,
-                    slot: subject.slot,
-                    teacher: subject.teacher,
-                    className: subject.className
-                })
-            }
-        })
 
-        ScheduleService.create({title: title, start: start, end: end, subjects: data}).then(res => {
+        ScheduleService.create({title: title, start: start, end: end, subjects: selected}).then(res => {
             Swal.fire({
                 title: "Success",
                 text: "Schedule created successfully",
